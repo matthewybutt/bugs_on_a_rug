@@ -6,6 +6,12 @@ Bugs On A Rug is a matching game where players try and clear the bugs off of the
 
 ###Wireframes
 
+[Wireframe 2015-10-09](https://raw.githubusercontent.com/matthewybutt/bugs_on_a_rug/master/assets/bugs_wireframe01_2015-10-09.jpg)
+
+[Wireframe 2015-10-08 v02](https://raw.githubusercontent.com/matthewybutt/bugs_on_a_rug/master/assets/bugs_wireframe_2015-10-08_v02.jpg)
+
+[Wireframe 2015-10-08 v01](https://raw.githubusercontent.com/matthewybutt/bugs_on_a_rug/master/assets/bugs_wireframe_2015-10-08_v01.jpg)
+
 ###User Stories
 * As a player I want the rules of the game so I know how to play and/or a tutorial mode
 * As a player I want a simple and clean interface so I know what everything is
