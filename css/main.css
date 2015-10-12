@@ -1,0 +1,81 @@
+.body {
+	background-color: #A4E3FF;
+}
+
+.main {
+	max-width: auto;
+	max-height: auto;
+	margin: auto;
+	position: relative;
+	text-align: center;
+}
+
+#topOfBoard {
+	display: inline-block;
+	border: 1px dotted black;
+	max-width: 500px;
+	float: top;
+	position: relative;
+}
+
+#rcs {
+	display: inline-block;
+}
+
+#colorSelected {
+	display: inline-block;
+	border: 1px solid red;
+}
+
+#stink {
+	display: inline-block;
+	border: 1px solid green;
+}
+
+#innerContainer {
+	width: 750px;
+	max-height: auto;
+	margin: auto;
+	position: relative;
+	text-align: center;
+}
+
+.board {
+	display: inline-block;
+	border: 1px solid blue;
+	width: 500px;
+	margin: auto;
+	padding: 5px;
+	position: relative;
+	text-align: center;
+	float: center;
+}
+
+.cells {
+	display: inline-block;
+	border: 1px solid black;
+	height: 100px;
+	width: 100px;
+	margin: 5px;
+	text-align: center;
+}
+
+.container {
+	display: inline-block;
+	border: 1px dotted black;
+	height: 400px;
+	width: 100px;
+	position: relative;
+}
+
+#container1 {
+	float: left;
+}
+
+#container2 {
+	float: right;
+}
+
+#start {
+	display: inline-block;
+}
