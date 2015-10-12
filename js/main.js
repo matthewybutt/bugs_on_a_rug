@@ -1,3 +1,13 @@
+console.log("Bugs On A Rug");
+
+var howTo = document.getElementById("howTo")
+
+howTo.addEventListener('click', howToPlay);
+
+function howToPlay (){
+	alert("Bugs On A Rug is a matching game where players try and clear the bugs off of the rug! On your turn match the color of the bug given to you to clear it off the rug. If you can't make a match you get a stink bug, collect 3 stink bugs and you lose!");
+}
+
 /*
 1. When the page loads-
 	A. display game title, board, random color generator, both players' bug containers, information button and start button

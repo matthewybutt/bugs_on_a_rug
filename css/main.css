@@ -10,6 +10,10 @@
 	text-align: center;
 }
 
+#howTo {
+	margin-bottom: 10px;
+}
+
 #topOfBoard {
 	display: inline-block;
 	border: 1px dotted black;
@@ -78,4 +82,20 @@
 
 #start {
 	display: inline-block;
+}
+
+#cell01 {
+	background-color: red;
+}
+
+#cell02 {
+	background-color: blue;
+}
+
+#cell03 {
+	background-color: yellow;
+}
+
+#cell04 {
+	background-color: purple;
 }
