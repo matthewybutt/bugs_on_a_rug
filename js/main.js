@@ -1,19 +1,47 @@
 console.log("Bugs On A Rug");
 
+//"How to Play" Button
 var howTo = document.getElementById("howTo")
 
 howTo.addEventListener('click', howToPlay);
 
 function howToPlay (){
-	alert("Bugs On A Rug is a matching game where players try and clear the bugs off of the rug! On your turn match the color of the bug given to you to clear it off the rug. If you can't make a match you get a stink bug, collect 3 stink bugs and you lose!");
+	alert("Bugs On A Rug is a matching game where players try and clear the bugs off of the rug! On your turn click the color selector button and match the color of the bug given to you to clear it off the rug. If you can't make a match you get a stink bug, collect 3 stink bugs and you lose!");
 }
+
+//"Random Color Selector" Button
+var rng = function() {
+    var num = Math.random();
+    console.log(num);
+    if (num > 0.75) {
+        console.log("red");
+        return (colorDisplay.innerHTML = "Red", colorDisplay.style.backgroundColor = "red");
+    } else if (num < 0.25) {
+        console.log("blue");
+        return (colorDisplay.innerHTML = "Blue", colorDisplay.style.backgroundColor = "blue");
+    } else if ((num > 0.25) && (num < 0.5)) {
+        console.log("yellow");
+        return (colorDisplay.innerHTML = "Yellow", colorDisplay.style.backgroundColor = "yellow");
+    } else {
+        console.log("purple");
+        return (colorDisplay.innerHTML = "Purple", colorDisplay.style.backgroundColor = "purple");
+        }
+}
+
+var colorSelect = document.getElementById("rcs")
+var colorDisplay = document.getElementById("colorDisplay")
+
+colorSelect.addEventListener('click', rng);
+
+
+
 
 /*
 1. When the page loads-
-	A. display game title, board, random color generator, both players' bug containers, information button and start button
+	A. display game title, board, random color generator, both players' bug containers, "How to Play" button and start button
 
-2. Information button:
-	A. at any point during game play the "information" button can be clicked to display the rules of the game
+2. "How to Play" button:
+	A. at any point during game play the "How to Play" button can be clicked to display the rules of the game
 
 3. When the player clicks the start button:
 	A. the game board populates with bug tokens
