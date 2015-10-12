@@ -1,5 +1,30 @@
 console.log("Bugs On A Rug");
 
+var rugBoard = [
+	];
+
+var colorDisplayValue = ""
+var count = 1;
+var player1Turn = true;
+var boardSize = 16
+
+function startGame(){
+	for (var i = 0; i < boardSize; i++ ) { 
+		rugBoard[i] = document.getElementById('bug' + count++); 
+		rugBoard[i].addEventListener('click', clickCell);
+		if ((i === 0) || (i === 5) || (i === 10) || (i === 15)) {
+			rugBoard[i].color = "red";
+		} else if ((i === 1) || (i === 6) || (i === 11) || (i === 12)) {
+			rugBoard[i].color = "blue";
+		} else if ((i === 2) || (i === 7) || (i === 8) || (i === 13)) {
+			rugBoard[i].color = "yellow";
+		} else {
+			rugBoard[i].color = "purple";
+		}
+	}
+}
+
+///////////////////////////////////////////////////////////////////////////
 //"How to Play" Button
 var howTo = document.getElementById("howTo")
 
@@ -9,32 +34,46 @@ function howToPlay (){
 	alert("Bugs On A Rug is a matching game where players try and clear the bugs off of the rug! On your turn click the color selector button and match the color of the bug given to you to clear it off the rug. If you can't make a match you get a stink bug, collect 3 stink bugs and you lose!");
 }
 
+///////////////////////////////////////////////////////////////////////////
 //"Random Color Selector" Button
 var rng = function() {
     var num = Math.random();
     console.log(num);
     if (num > 0.75) {
         console.log("red");
+        colorDisplayValue = "red";
         return (colorDisplay.innerHTML = "Red", colorDisplay.style.backgroundColor = "red");
     } else if (num < 0.25) {
         console.log("blue");
+        colorDisplayValue = "blue";
         return (colorDisplay.innerHTML = "Blue", colorDisplay.style.backgroundColor = "blue");
     } else if ((num > 0.25) && (num < 0.5)) {
         console.log("yellow");
+        colorDisplayValue = "yellow";
         return (colorDisplay.innerHTML = "Yellow", colorDisplay.style.backgroundColor = "yellow");
     } else {
         console.log("purple");
+        colorDisplayValue = "purple";
         return (colorDisplay.innerHTML = "Purple", colorDisplay.style.backgroundColor = "purple");
         }
 }
 
-var colorSelect = document.getElementById("rcs")
-var colorDisplay = document.getElementById("colorDisplay")
+var colorSelect = document.getElementById("rcs");
+var colorDisplay = document.getElementById("colorDisplay");
 
 colorSelect.addEventListener('click', rng);
 
 
+///////////////////////////////////////////////////////////////////////////
+//Matching Bugs function
 
+var clickCell = function(event) {
+	if (this.color === colorDisplayValue) {
+		console.log("match");
+	} else {
+		console.log("no match");
+	}
+}
 
 /*
 1. When the page loads-

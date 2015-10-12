@@ -98,18 +98,18 @@
 	display: inline-block;
 }
 
-#cell01 {
+#bug1 {
 	background-color: red;
 }
 
-#cell02 {
+#bug2 {
 	background-color: blue;
 }
 
-#cell03 {
+#bug3 {
 	background-color: yellow;
 }
 
-#cell04 {
+#bug4 {
 	background-color: purple;
 }
