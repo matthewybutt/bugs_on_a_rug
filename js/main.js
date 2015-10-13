@@ -10,6 +10,10 @@ var boardSize = 16
 
 ///////////////////////////////////////////////////////////////////////////
 //Game Start function
+var gameStart = document.getElementById("start")
+
+gameStart.addEventListener('click', startGame);
+
 function startGame(){
 	for (var i = 0; i < boardSize; i++ ) { 
 		rugBoard[i] = document.getElementById('bug' + count++); 
@@ -75,10 +79,11 @@ colorSelect.addEventListener('click', rng);
 var clickCell = function(event) {
 	if (this.data === colorDisplayValue) {
 		console.log("match");
-//		alert("Match!");
+		this.style.visibility = "hidden";
+		
 	} else {
 		console.log("no match");
-//		alert("No match!");
+//		alert("Sorry, not a match!");
 	}
 }
 
