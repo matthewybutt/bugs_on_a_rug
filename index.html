@@ -15,16 +15,21 @@
 		<br>
 
 		<div id="topOfBoard">
-			<button id="rcs">RCS</button>
-			<div id="colorDisplay">Color to Match</div>
-			<div id="stink">Stink Bugs</div>
+			<div class="topMenu" id="playerTurn">Who's Turn</div>
+			<button  id="rcs">RCS</button>
+			<div class="topMenu" id="colorDisplay"><span>Color to Match</span></div>
+			<div class="topMenu" id="stink">Stink Bugs</div>
 		</div>
 		
 		<br>
 
 		<div id="innerContainer">
-			<div class="container" id ="container1">Player 1 Score
+
+			<div class="container" id ="container1">
+				<div class="score">Player 1</div>
+				<div class="score">Bugs Collected</div>
 				<div class="score" id="score1"></div>
+				<div class="score">Stink Bugs</div>
 				<div class="score" id="stinkScore1"></div>
 			</div>
 
@@ -47,8 +52,11 @@
 				<div class="cells" id="bug16">bug 16</div>
 			</div>
 			
-			<div class="container" id ="container2">Player 2 Score
+			<div class="container" id ="container2">
+				<div class="score">Player 2</div>
+				<div class="score">Bugs Collected</div>
 				<div class="score" id="score2"></div>
+				<div class="score">Stink Bugs</div>
 				<div class="score" id="stinkScore2"></div>
 			</div>
 

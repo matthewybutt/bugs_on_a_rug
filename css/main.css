@@ -23,6 +23,20 @@
 	margin-bottom: 10px;
 }
 
+.topMenu {
+	display: inline-block; 
+	width: 100px;
+	height: 75px;
+	text-align: center;
+	vertical-align: center;
+	line-height: 75px;
+}
+
+#playerTurn {
+	display: inline-block;
+	border: 1px solid blue;
+}
+
 #rcs {
 	display: inline-block;
 }
@@ -67,6 +81,7 @@
 }
 
 .cells {
+	border-radius: 50%;
 	display: inline-block;
 	border: 1px solid black;
 	height: 100px;
@@ -80,13 +95,11 @@
 .container {
 	display: inline-block;
 	border: 1px solid black;
-	height: 50px;
+	height: auto;
 	width: 100px;
 	position: relative;
-	margin-bottom: 50px;
 	text-align: center;
 	vertical-align: center;
-	line-height: 50px;
 }
 
 .score {
@@ -97,6 +110,8 @@
     text-align: center;
     vertical-align: center;
     line-height: 50px;
+    word-wrap: break-word;
+    overflow: auto;
 }
 
 #container1 {
@@ -114,3 +129,9 @@
 #restart {
 	display: inline-block;
 }
+
+/*span {
+	display: inline-block;
+	vertical-align: middle;
+	line-height: normal;
+}*/

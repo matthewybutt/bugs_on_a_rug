@@ -6,6 +6,7 @@ var count = 1;
 var player1Turn = true;
 var boardSize = 16
 var stinkBugs = 5
+
 ///////////////////////////////////////////////////////////////////////////
 //Game Start function
 var gameStart = document.getElementById("start")
@@ -29,7 +30,8 @@ function startGame(){
 			rugBoard[i].data = "purple";
 			rugBoard[i].style.backgroundColor = "purple";
 		}
-	}
+	} playerTurn.innerHTML = "Player 1's turn"
+
 }
 
 ///////////////////////////////////////////////////////////////////////////
@@ -94,6 +96,10 @@ var clickCell = function(event) {
 			p1Score.innerHTML = p1ScoreBoard;
 			this.style.visibility = "hidden";
 			player1Turn = false;
+			playerTurn.innerHTML = "Player 2's turn"
+			colorDisplayValue = ""
+			colorDisplay.innerHTML = "<- Click RCS"
+			colorDisplay.style.backgroundColor = ""
 		} else {
 			console.log("no match");
 	//		alert("Sorry, not a match!");
@@ -105,6 +111,10 @@ var clickCell = function(event) {
 			p2Score.innerHTML = p2ScoreBoard;
 			this.style.visibility = "hidden";
 			player1Turn = true;
+			playerTurn.innerHTML = "Player 1's turn"
+			colorDisplayValue = ""
+			colorDisplay.innerHTML = "<- Click RCS"
+			colorDisplay.style.backgroundColor = ""
 		} else {
 			console.log("no match");
 	//		alert("Sorry, not a match!");
@@ -118,6 +128,7 @@ var p1ScoreBoard = 0;
 var p2ScoreBoard = 0;
 var p1Score = document.getElementById('score1');
 var p2Score = document.getElementById('score2');
+var playerTurn = document.getElementById('playerTurn')
 
 
 ///////////////////////////////////////////////////////////////////////////
