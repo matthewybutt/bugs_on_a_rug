@@ -162,6 +162,8 @@ function addStinkBug(event){
 	if (player1Turn) {
 		p1StinkScoreBoard += 1;
 		stinkScore1.innerHTML = p1StinkScoreBoard;
+		stinkCounter -= 1;
+		stinkCount.innerHTML = stinkCounter;
 		player1Turn = false;
 		playerTurn.innerHTML = "Player 2's turn"
 		colorDisplayValue = ""
@@ -173,6 +175,8 @@ function addStinkBug(event){
 	} else {
 		p2StinkScoreBoard += 1
 		stinkScore2.innerHTML = p2StinkScoreBoard;
+		stinkCounter -= 1;
+		stinkCount.innerHTML = stinkCounter;
 		player1Turn = true;
 		playerTurn.innerHTML = "Player 1's turn"
 		colorDisplayValue = ""
@@ -187,6 +191,8 @@ function addStinkBug(event){
 var stinkBugs = document.getElementById('stink');
 var stinkScore1 = document.getElementById('stinkScore1');
 var stinkScore2 = document.getElementById('stinkScore2');
+var stinkCount = document.getElementById('stinkCount');
+var stinkCounter = 5
 var p1StinkScoreBoard = 0;
 var p2StinkScoreBoard = 0;
 //stinkBugs.addEventListener('click', addStinkBug)
