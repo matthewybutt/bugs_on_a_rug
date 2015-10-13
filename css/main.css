@@ -14,10 +14,6 @@
 
 }
 
-#howTo {
-	margin-bottom: 10px;
-}
-
 #topOfBoard {
 	display: inline-block;
 	border: 1px dotted black;
@@ -27,52 +23,70 @@
 	margin-bottom: 10px;
 }
 
+.topOfMenu {
+	display: inline-block; 
+	width: auto;
+	height: 25px;
+	text-align: center;
+	vertical-align: center;
+	line-height: 25px;
+}
+
 .topMenu {
 	display: inline-block; 
 	width: auto;
-	height: 75px;
+	height: 50px;
 	text-align: center;
 	vertical-align: center;
-	line-height: 75px;
+	line-height: 50px;
+}
+
+#playerTurnTop {
+	display: inline-block;
+	border: 1px solid blue;
+	text-align: center;
+	vertical-align: center;
+	width: 105px;
 }
 
 #playerTurn {
 	display: inline-block;
 	border: 1px solid blue;
+	text-align: center;
+	vertical-align: center;
+	width: 105px;
 }
 
-#rcs {
+#colorDisplayTop {
 	display: inline-block;
+	border: 1px solid black;
+	text-align: center;
+	vertical-align: center;
+	width: 105px;
 }
 
 #colorDisplay {
 	display: inline-block;
 	border: 1px solid black;
-	width: 100px;
-	height: 75px;
 	text-align: center;
 	vertical-align: center;
-	line-height: 75px;
+	width: 105px;
 }
 
-#stink {
+#stinkCountTop {
 	display: inline-block;
 	border: 1px solid green;
-	width: 75px;
-	height: 75px;
 	text-align: center;
 	vertical-align: center;
-	line-height: 75px;
+	width: 105px;
 }
 
 #stinkCount {
 	display: inline-block;
 	border: 1px solid green;
-	width: 25px;
-	height: 75px;
 	text-align: center;
 	vertical-align: center;
-	line-height: 75px;
+	width: 105px;
 }
 
 #innerContainer {
@@ -118,7 +132,7 @@
 .score {
     display: inline-block;
     border-radius: 30%;
-    border: 1px dotted black;
+    border: 1px solid black;
     height: 50px;
     width: 100px;
     text-align: center;
@@ -137,6 +151,11 @@
 }
 
 #start {
+	display: inline-block;
+	margin-bottom: 10px;
+}
+
+#howTo {
 	display: inline-block;
 }
 

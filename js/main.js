@@ -30,8 +30,10 @@ function startGame(){
 			rugBoard[i].data = "purple";
 			rugBoard[i].style.backgroundColor = "purple";
 		}
-	} playerTurn.innerHTML = "Player 1's turn"
-
+	} 
+	playerTurn.innerHTML = "Player 1";
+	colorDisplay.innerHTML = "Click for Color";
+	stinkCount.innerHTML = "5";
 }
 
 ///////////////////////////////////////////////////////////////////////////
@@ -91,7 +93,7 @@ var rng = function() {
 var colorSelect = document.getElementById("rcs");
 var colorDisplay = document.getElementById("colorDisplay");
 
-colorSelect.addEventListener('click', rng);
+//colorSelect.addEventListener('click', rng);
 colorDisplay.addEventListener('click', rng);
 
 ///////////////////////////////////////////////////////////////////////////
@@ -104,7 +106,7 @@ var clickCell = function(event) {
 			p1Score.innerHTML = p1ScoreBoard;
 			this.style.visibility = "hidden";
 			player1Turn = false;
-			playerTurn.innerHTML = "Player 2's turn"
+			playerTurn.innerHTML = "Player 2"
 			colorDisplayValue = ""
 			colorDisplay.innerHTML = "Click for Color"
 			colorDisplay.style.backgroundColor = ""
@@ -119,7 +121,7 @@ var clickCell = function(event) {
 			p2Score.innerHTML = p2ScoreBoard;
 			this.style.visibility = "hidden";
 			player1Turn = true;
-			playerTurn.innerHTML = "Player 1's turn"
+			playerTurn.innerHTML = "Player 1"
 			colorDisplayValue = ""
 			colorDisplay.innerHTML = "Click for Color"
 			colorDisplay.style.backgroundColor = ""
@@ -162,7 +164,7 @@ function addStinkBug(event){
 		stinkCounter -= 1;
 		stinkCount.innerHTML = stinkCounter;
 		player1Turn = false;
-		playerTurn.innerHTML = "Player 2's turn"
+		playerTurn.innerHTML = "Player 2"
 		colorDisplayValue = ""
 		colorDisplay.innerHTML = "Click for Color"
 		colorDisplay.style.backgroundColor = ""
@@ -175,7 +177,7 @@ function addStinkBug(event){
 		stinkCounter -= 1;
 		stinkCount.innerHTML = stinkCounter;
 		player1Turn = true;
-		playerTurn.innerHTML = "Player 1's turn"
+		playerTurn.innerHTML = "Player 1"
 		colorDisplayValue = ""
 		colorDisplay.innerHTML = "Click for Color"
 		colorDisplay.style.backgroundColor = ""
