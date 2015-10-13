@@ -8,18 +8,24 @@ var count = 1;
 var player1Turn = true;
 var boardSize = 16
 
+///////////////////////////////////////////////////////////////////////////
+//Game Start function
 function startGame(){
 	for (var i = 0; i < boardSize; i++ ) { 
 		rugBoard[i] = document.getElementById('bug' + count++); 
 		rugBoard[i].addEventListener('click', clickCell);
 		if ((i === 0) || (i === 5) || (i === 10) || (i === 15)) {
-			rugBoard[i].color = "red";
+			rugBoard[i].data = "red";
+			rugBoard[i].style.backgroundColor = "red";
 		} else if ((i === 1) || (i === 6) || (i === 11) || (i === 12)) {
-			rugBoard[i].color = "blue";
+			rugBoard[i].data = "blue";
+			rugBoard[i].style.backgroundColor = "blue";
 		} else if ((i === 2) || (i === 7) || (i === 8) || (i === 13)) {
-			rugBoard[i].color = "yellow";
+			rugBoard[i].data = "yellow";
+			rugBoard[i].style.backgroundColor = "yellow";
 		} else {
-			rugBoard[i].color = "purple";
+			rugBoard[i].data = "purple";
+			rugBoard[i].style.backgroundColor = "purple";
 		}
 	}
 }
@@ -66,14 +72,18 @@ colorSelect.addEventListener('click', rng);
 
 ///////////////////////////////////////////////////////////////////////////
 //Matching Bugs function
-
 var clickCell = function(event) {
-	if (this.color === colorDisplayValue) {
+	if (this.data === colorDisplayValue) {
 		console.log("match");
+//		alert("Match!");
 	} else {
 		console.log("no match");
+//		alert("No match!");
 	}
 }
+
+
+
 
 /*
 1. When the page loads-
