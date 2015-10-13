@@ -131,9 +131,37 @@ function areAllHidden() {
 		}
 	} if (hidden === 4) {
 		alert("No moves!");
+		addStinkBug();
 	}
 }
 
+///////////////////////////////////////////////////////////////////////////
+//Stink Bugs function
+
+function addStinkBug(event){
+	if (player1Turn) {
+		p1StinkScoreBoard += 1;
+		stinkScore1.innerHTML = p1StinkScoreBoard;
+		if (p1StinkScoreBoard === 3) {
+			alert("Uh-oh, Player 1 has 3 stink bugs!  Player 1 loses!");
+		}
+		player1Turn = false;
+	} else {
+		p2StinkScoreBoard += 1
+		stinkScore2.innerHTML = p2StinkScoreBoard;
+		if (p2StinkScoreBoard === 3) {
+			alert("Uh-oh, Player 2 has 3 stink bugs!  Player 2 loses!");
+		}
+		player1Turn = true;
+	}
+}
+
+var stinkBugs = document.getElementById('stink');
+var stinkScore1 = document.getElementById('stinkScore1');
+var stinkScore2 = document.getElementById('stinkScore2');
+var p1StinkScoreBoard = 0;
+var p2StinkScoreBoard = 0;
+stinkBugs.addEventListener('click', addStinkBug)
 /*
 1. When the page loads-
 	A. display game title, board, random color generator, both players' bug containers, "How to Play" button and start button
