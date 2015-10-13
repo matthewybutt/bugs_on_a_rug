@@ -58,25 +58,34 @@ function howToPlay (){
 ///////////////////////////////////////////////////////////////////////////
 //"Random Color Selector" Button
 var rng = function() {
-    areAllHidden();
+//    areAllHidden();
+    var color = "";
     var num = Math.random();
     console.log(num);
     if (num > 0.75) {
         console.log("red");
         colorDisplayValue = "red";
-        return (colorDisplay.innerHTML = "Red", colorDisplay.style.backgroundColor = "red");
+        (colorDisplay.innerHTML = "Red", colorDisplay.style.backgroundColor = "red");
+        areAllHidden();
+        return;
     } else if (num < 0.25) {
         console.log("blue");
         colorDisplayValue = "blue";
-        return (colorDisplay.innerHTML = "Blue", colorDisplay.style.backgroundColor = "blue");
+        (colorDisplay.innerHTML = "Blue", colorDisplay.style.backgroundColor = "blue");
+         areAllHidden();
+         return;
     } else if ((num > 0.25) && (num < 0.5)) {
         console.log("yellow");
         colorDisplayValue = "yellow";
-        return (colorDisplay.innerHTML = "Yellow", colorDisplay.style.backgroundColor = "yellow");
+        (colorDisplay.innerHTML = "Yellow", colorDisplay.style.backgroundColor = "yellow");
+        areAllHidden();
+        return;
     } else {
         console.log("purple");
         colorDisplayValue = "purple";
-        return (colorDisplay.innerHTML = "Purple", colorDisplay.style.backgroundColor = "purple");
+        (colorDisplay.innerHTML = "Purple", colorDisplay.style.backgroundColor = "purple");
+        areAllHidden();
+        return;
         }
 }
 
@@ -153,17 +162,25 @@ function addStinkBug(event){
 	if (player1Turn) {
 		p1StinkScoreBoard += 1;
 		stinkScore1.innerHTML = p1StinkScoreBoard;
+		player1Turn = false;
+		playerTurn.innerHTML = "Player 2's turn"
+		colorDisplayValue = ""
+		colorDisplay.innerHTML = "<- Click RCS"
+		colorDisplay.style.backgroundColor = ""
 		if (p1StinkScoreBoard === 3) {
 			alert("Uh-oh, Player 1 has 3 stink bugs!  Player 1 loses!");
 		}
-		player1Turn = false;
 	} else {
 		p2StinkScoreBoard += 1
 		stinkScore2.innerHTML = p2StinkScoreBoard;
+		player1Turn = true;
+		playerTurn.innerHTML = "Player 1's turn"
+		colorDisplayValue = ""
+		colorDisplay.innerHTML = "<- Click RCS"
+		colorDisplay.style.backgroundColor = ""
 		if (p2StinkScoreBoard === 3) {
 			alert("Uh-oh, Player 2 has 3 stink bugs!  Player 2 loses!");
 		}
-		player1Turn = true;
 	}
 }
 
@@ -172,7 +189,8 @@ var stinkScore1 = document.getElementById('stinkScore1');
 var stinkScore2 = document.getElementById('stinkScore2');
 var p1StinkScoreBoard = 0;
 var p2StinkScoreBoard = 0;
-stinkBugs.addEventListener('click', addStinkBug)
+//stinkBugs.addEventListener('click', addStinkBug)
+
 /*
 1. When the page loads-
 	A. display game title, board, random color generator, both players' bug containers, "How to Play" button and start button
