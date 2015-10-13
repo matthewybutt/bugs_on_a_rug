@@ -91,8 +91,8 @@ var rng = function() {
 var colorSelect = document.getElementById("rcs");
 var colorDisplay = document.getElementById("colorDisplay");
 
-var selectColor = colorSelect.addEventListener('click', rng);
-
+colorSelect.addEventListener('click', rng);
+colorDisplay.addEventListener('click', rng);
 
 ///////////////////////////////////////////////////////////////////////////
 //Matching Bugs & Score Keepeing function
@@ -106,7 +106,7 @@ var clickCell = function(event) {
 			player1Turn = false;
 			playerTurn.innerHTML = "Player 2's turn"
 			colorDisplayValue = ""
-			colorDisplay.innerHTML = "<- Click RCS"
+			colorDisplay.innerHTML = "Click for Color"
 			colorDisplay.style.backgroundColor = ""
 		} else {
 			console.log("no match");
@@ -121,7 +121,7 @@ var clickCell = function(event) {
 			player1Turn = true;
 			playerTurn.innerHTML = "Player 1's turn"
 			colorDisplayValue = ""
-			colorDisplay.innerHTML = "<- Click RCS"
+			colorDisplay.innerHTML = "Click for Color"
 			colorDisplay.style.backgroundColor = ""
 		} else {
 			console.log("no match");
@@ -164,7 +164,7 @@ function addStinkBug(event){
 		player1Turn = false;
 		playerTurn.innerHTML = "Player 2's turn"
 		colorDisplayValue = ""
-		colorDisplay.innerHTML = "<- Click RCS"
+		colorDisplay.innerHTML = "Click for Color"
 		colorDisplay.style.backgroundColor = ""
 		if (p1StinkScoreBoard === 3) {
 //			alert("Uh-oh, Player 1 has 3 stink bugs!  Player 1 loses!");
@@ -177,7 +177,7 @@ function addStinkBug(event){
 		player1Turn = true;
 		playerTurn.innerHTML = "Player 1's turn"
 		colorDisplayValue = ""
-		colorDisplay.innerHTML = "<- Click RCS"
+		colorDisplay.innerHTML = "Click for Color"
 		colorDisplay.style.backgroundColor = ""
 		if (p2StinkScoreBoard === 3) {
 //			alert("Uh-oh, Player 2 has 3 stink bugs!  Player 2 loses!");
