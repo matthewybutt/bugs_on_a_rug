@@ -89,19 +89,14 @@
 	line-height: 50px;
 }
 
-#score1 {
+.score {
     display: inline-block;
     border: 1px dotted black;
-    height: 100px;
+    height: 50px;
     width: 100px;
     text-align: center;
-}
-
-#score2 {
-    display: inline-block;
-    border: 1px dotted black;
-    height: 100px;
-    width: 100px;
+    vertical-align: center;
+    line-height: 50px;
 }
 
 #container1 {

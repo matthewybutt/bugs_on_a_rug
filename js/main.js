@@ -5,7 +5,7 @@ var colorDisplayValue = ""
 var count = 1;
 var player1Turn = true;
 var boardSize = 16
-
+var stinkBugs = 5
 ///////////////////////////////////////////////////////////////////////////
 //Game Start function
 var gameStart = document.getElementById("start")
@@ -56,6 +56,7 @@ function howToPlay (){
 ///////////////////////////////////////////////////////////////////////////
 //"Random Color Selector" Button
 var rng = function() {
+    areAllHidden();
     var num = Math.random();
     console.log(num);
     if (num > 0.75) {
@@ -84,7 +85,7 @@ colorSelect.addEventListener('click', rng);
 
 
 ///////////////////////////////////////////////////////////////////////////
-//Matching Bugs function
+//Matching Bugs & Score Keepeing function
 var clickCell = function(event) {
 	if (player1Turn) {
 		if (this.data === colorDisplayValue) {
@@ -108,6 +109,8 @@ var clickCell = function(event) {
 			console.log("no match");
 	//		alert("Sorry, not a match!");
 		}
+	} if ((p1ScoreBoard + p2ScoreBoard) === boardSize) {
+		alert("You cleared all the bugs!  Good for you!");
 	}
 }
 
@@ -115,6 +118,21 @@ var p1ScoreBoard = 0;
 var p2ScoreBoard = 0;
 var p1Score = document.getElementById('score1');
 var p2Score = document.getElementById('score2');
+
+
+///////////////////////////////////////////////////////////////////////////
+//Checking for Available Moves function
+function areAllHidden() {
+	var hidden = 0;
+	for (var i = 0; i < boardSize; i++) {
+		if ((rugBoard[i].style.visibility === "hidden") &&
+			(rugBoard[i].data === colorDisplayValue)){
+			hidden += 1;
+		}
+	} if (hidden === 4) {
+		alert("No moves!");
+	}
+}
 
 /*
 1. When the page loads-
