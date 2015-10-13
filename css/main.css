@@ -107,7 +107,6 @@
 
 .container {
 	display: inline-block;
-	border: 1px solid black;
 	height: auto;
 	width: 100px;
 	position: relative;
@@ -117,6 +116,7 @@
 
 .score {
     display: inline-block;
+    border-radius: 30%;
     border: 1px dotted black;
     height: 50px;
     width: 100px;

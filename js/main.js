@@ -58,7 +58,6 @@ function howToPlay (){
 ///////////////////////////////////////////////////////////////////////////
 //"Random Color Selector" Button
 var rng = function() {
-//    areAllHidden();
     var color = "";
     var num = Math.random();
     console.log(num);
@@ -92,7 +91,7 @@ var rng = function() {
 var colorSelect = document.getElementById("rcs");
 var colorDisplay = document.getElementById("colorDisplay");
 
-colorSelect.addEventListener('click', rng);
+var selectColor = colorSelect.addEventListener('click', rng);
 
 
 ///////////////////////////////////////////////////////////////////////////
@@ -128,9 +127,7 @@ var clickCell = function(event) {
 			console.log("no match");
 	//		alert("Sorry, not a match!");
 		}
-	} if ((p1ScoreBoard + p2ScoreBoard) === boardSize) {
-		alert("You cleared all the bugs!  Good for you!");
-	}
+	} endGame();
 }
 
 var p1ScoreBoard = 0;
@@ -150,9 +147,9 @@ function areAllHidden() {
 			hidden += 1;
 		}
 	} if (hidden === 4) {
-		alert("No moves!");
+		alert("Uh-oh, there's no matching bugs for you!  You lose your turn and get a stink bug!");
 		addStinkBug();
-	}
+	} endGame();
 }
 
 ///////////////////////////////////////////////////////////////////////////
@@ -170,7 +167,7 @@ function addStinkBug(event){
 		colorDisplay.innerHTML = "<- Click RCS"
 		colorDisplay.style.backgroundColor = ""
 		if (p1StinkScoreBoard === 3) {
-			alert("Uh-oh, Player 1 has 3 stink bugs!  Player 1 loses!");
+//			alert("Uh-oh, Player 1 has 3 stink bugs!  Player 1 loses!");
 		}
 	} else {
 		p2StinkScoreBoard += 1
@@ -183,7 +180,7 @@ function addStinkBug(event){
 		colorDisplay.innerHTML = "<- Click RCS"
 		colorDisplay.style.backgroundColor = ""
 		if (p2StinkScoreBoard === 3) {
-			alert("Uh-oh, Player 2 has 3 stink bugs!  Player 2 loses!");
+//			alert("Uh-oh, Player 2 has 3 stink bugs!  Player 2 loses!");
 		}
 	}
 }
@@ -196,6 +193,23 @@ var stinkCounter = 5
 var p1StinkScoreBoard = 0;
 var p2StinkScoreBoard = 0;
 //stinkBugs.addEventListener('click', addStinkBug)
+
+///////////////////////////////////////////////////////////////////////////
+//Stink Bugs function
+
+function endGame(){
+	if (p1StinkScoreBoard === 3) {
+		alert("Uh-oh, Player 1 has 3 stink bugs!  Player 2 wins!  The game is over!  Thanks for playing Bugs On A Rug!  Click the 'Start' button to play again!");
+		restartGame();
+	} else if (p2StinkScoreBoard === 3) {
+		alert("Uh-oh, Player 2 has 3 stink bugs!  Player 1 wins!  The game is over!  Thanks for playing Bugs On A Rug!  Click the 'Start' button to play again!");
+		restartGame();
+	} else if ((p1ScoreBoard + p2ScoreBoard) === boardSize) {
+		alert("WOW!  You both cleared the board, good for you!  The game is over!  Thanks for playing Bugs On A Rug!  Click the 'Start' button to play again!");
+		restartGame();
+	}
+}
+
 
 /*
 1. When the page loads-
