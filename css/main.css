@@ -35,7 +35,6 @@
 	text-align: center;
 	vertical-align: center;
 	line-height: 75px;
-	background-color: white;
 }
 
 #stink {
@@ -80,10 +79,29 @@
 
 .container {
 	display: inline-block;
-	border: 1px dotted black;
-	height: 400px;
+	border: 1px solid black;
+	height: 50px;
 	width: 100px;
 	position: relative;
+	margin-bottom: 50px;
+	text-align: center;
+	vertical-align: center;
+	line-height: 50px;
+}
+
+#score1 {
+    display: inline-block;
+    border: 1px dotted black;
+    height: 100px;
+    width: 100px;
+    text-align: center;
+}
+
+#score2 {
+    display: inline-block;
+    border: 1px dotted black;
+    height: 100px;
+    width: 100px;
 }
 
 #container1 {
@@ -95,5 +113,9 @@
 }
 
 #start {
+	display: inline-block;
+}
+
+#restart {
 	display: inline-block;
 }

@@ -1,8 +1,6 @@
 console.log("Bugs On A Rug");
 
-var rugBoard = [
-	];
-
+var rugBoard = [];
 var colorDisplayValue = ""
 var count = 1;
 var player1Turn = true;
@@ -32,6 +30,17 @@ function startGame(){
 			rugBoard[i].style.backgroundColor = "purple";
 		}
 	}
+}
+
+///////////////////////////////////////////////////////////////////////////
+//Restart Game button function
+var restart = document.getElementById("restart")
+
+restart.addEventListener('click', restartGame);
+
+function restartGame(){
+   window.location.reload();
+   gameStart();
 }
 
 ///////////////////////////////////////////////////////////////////////////
@@ -77,18 +86,35 @@ colorSelect.addEventListener('click', rng);
 ///////////////////////////////////////////////////////////////////////////
 //Matching Bugs function
 var clickCell = function(event) {
-	if (this.data === colorDisplayValue) {
-		console.log("match");
-		this.style.visibility = "hidden";
-		
+	if (player1Turn) {
+		if (this.data === colorDisplayValue) {
+			console.log("match");
+			p1ScoreBoard += 1;
+			p1Score.innerHTML = p1ScoreBoard;
+			this.style.visibility = "hidden";
+			player1Turn = false;
+		} else {
+			console.log("no match");
+	//		alert("Sorry, not a match!");
+		}
 	} else {
-		console.log("no match");
-//		alert("Sorry, not a match!");
+		if (this.data === colorDisplayValue) {
+			console.log("match");
+			p2ScoreBoard += 1;
+			p2Score.innerHTML = p2ScoreBoard;
+			this.style.visibility = "hidden";
+			player1Turn = true;
+		} else {
+			console.log("no match");
+	//		alert("Sorry, not a match!");
+		}
 	}
 }
 
-
-
+var p1ScoreBoard = 0;
+var p2ScoreBoard = 0;
+var p1Score = document.getElementById('score1');
+var p2Score = document.getElementById('score2');
 
 /*
 1. When the page loads-
