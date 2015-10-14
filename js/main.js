@@ -179,8 +179,9 @@ function areAllHidden() {
 	} if (hidden === 4) {
 //		alert("Uh-oh, there's no matching bugs for you!  You lose your turn and get a stink bug!");
 		addStinkBug();
-		noMatch();
-	} endGame();
+		//noMatch();
+	} 
+	endGame();
 }
 
 ///////////////////////////////////////////////////////////////////////////
@@ -198,7 +199,8 @@ function addStinkBug(event){
 		colorDisplay.innerHTML = "Click for Color"
 		colorDisplay.className = colorDisplay.className.substring(0, colorDisplay.className.indexOf(' '));
 		//colorDisplay.style.backgroundColor = ""
-		if (p1StinkScoreBoard === 3) {
+		if (p1StinkScoreBoard < 3) {
+			noMatch();
 //			alert("Uh-oh, Player 1 has 3 stink bugs!  Player 1 loses!");
 		}
 	} else {
@@ -212,10 +214,11 @@ function addStinkBug(event){
 		colorDisplay.innerHTML = "Click for Color"
 		colorDisplay.className = colorDisplay.className.substring(0, colorDisplay.className.indexOf(' '));
 		//colorDisplay.style.backgroundColor = ""
-		if (p2StinkScoreBoard === 3) {
+		if (p2StinkScoreBoard < 3) {
+			noMatch();
 //			alert("Uh-oh, Player 2 has 3 stink bugs!  Player 2 loses!");
 		}
-	}
+	} 
 }
 
 var stinkBugs = document.getElementById('stink');

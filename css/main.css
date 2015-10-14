@@ -30,7 +30,7 @@ h1 {
 #topOfBoard {
 	display: inline-block;
 	border: 1px dotted black;
-	max-width: auto;
+	max-width: 500px;
 	float: top;
 	position: relative;
 	margin-bottom: 10px;
