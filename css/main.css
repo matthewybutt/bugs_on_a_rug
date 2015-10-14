@@ -29,10 +29,14 @@ h1 {
 
 #topOfBoard {
 	display: inline-block;
-	border: 1px dotted black;
-	max-width: 500px;
+	border: 5px dotted black;
+	background: rgba(255,255,255,.7);
+	border-radius: 30px;
+	width: 500px;
+	height: 90px;
 	float: top;
 	position: relative;
+	padding-top: 5px; 
 	margin-bottom: 10px;
 }
 
@@ -63,21 +67,21 @@ h1 {
 
 #playerTurnTop {
 	display: inline-block;
-	border: 1px solid blue;
 	text-align: center;
 	vertical-align: center;
 }
 
 #playerTurn {
 	display: inline-block;
-	border: 1px solid blue;
+	border: 1px solid black;
+	border-radius: 30px;
 	text-align: center;
 	vertical-align: center;
+	font-weight: bolder;
 }
 
 #colorDisplayTop {
 	display: inline-block;
-	border: 1px solid black;
 	text-align: center;
 	vertical-align: center;
 }
@@ -85,13 +89,14 @@ h1 {
 #colorDisplay {
 	display: inline-block;
 	border: 1px solid black;
+	border-radius: 30px;
 	text-align: center;
 	vertical-align: center;
+	font-weight: bolder;
 }
 
 #stinkCountTop {
 	display: inline-block;
-	border: 1px solid green;
 	text-align: center;
 	vertical-align: center;
 }
@@ -99,8 +104,10 @@ h1 {
 #stinkCount {
 	display: inline-block;
 	border: 1px solid green;
+	border-radius: 30px;
 	text-align: center;
 	vertical-align: center;
+	font-weight: bolder;
 }
 
 #innerContainer {
