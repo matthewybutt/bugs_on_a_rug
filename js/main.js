@@ -178,36 +178,38 @@ function areAllHidden() {
 		}
 	} if (hidden === 4) {
 //		alert("Uh-oh, there's no matching bugs for you!  You lose your turn and get a stink bug!");
-		addStinkBug();
+		timer = window.setTimeout(addStinkBug, 1500);
 		//noMatch();
 	} 
 	endGame();
 }
 
+var timer;
 ///////////////////////////////////////////////////////////////////////////
 //Stink Bugs function
 
 function addStinkBug(event){
 	if (player1Turn) {
-		p1StinkScoreBoard += 1;
-		stinkScore1.innerHTML = p1StinkScoreBoard;
-		stinkCounter -= 1;
-		stinkCount.innerHTML = stinkCounter;
+//		p1StinkScoreBoard += 1;
+//		stinkScore1.innerHTML = p1StinkScoreBoard;
+//		stinkCounter -= 1;
+//		stinkCount.innerHTML = stinkCounter;
 //		player1Turn = false;
 //		playerTurn.innerHTML = "Player 2";
 //		colorDisplayValue = "";
 //		colorDisplay.innerHTML = "Click for Color";
 //		colorDisplay.className = colorDisplay.className.substring(0, colorDisplay.className.indexOf(' '));
 		//colorDisplay.style.backgroundColor = ""
-		if (p1StinkScoreBoard < 3) {
-			noMatch();
+		if (p1StinkScoreBoard < 3) {	
+//		timer = window.setTimeout(noMatch, 1500);
+			noMatch();			
 //			alert("Uh-oh, Player 1 has 3 stink bugs!  Player 1 loses!");
 		}
 	} else {
-		p2StinkScoreBoard += 1;
-		stinkScore2.innerHTML = p2StinkScoreBoard;
-		stinkCounter -= 1;
-		stinkCount.innerHTML = stinkCounter;
+//		p2StinkScoreBoard += 1;
+//		stinkScore2.innerHTML = p2StinkScoreBoard;
+//		stinkCounter -= 1;
+//		stinkCount.innerHTML = stinkCounter;
 //		player1Turn = true;
 //		playerTurn.innerHTML = "Player 1";
 //		colorDisplayValue = "";
@@ -215,10 +217,11 @@ function addStinkBug(event){
 //		colorDisplay.className = colorDisplay.className.substring(0, colorDisplay.className.indexOf(' '));
 		//colorDisplay.style.backgroundColor = ""
 		if (p2StinkScoreBoard < 3) {
+//		timer = window.setTimeout(noMatch, 1500);
 			noMatch();
 //			alert("Uh-oh, Player 2 has 3 stink bugs!  Player 2 loses!");
 		}
-	} 
+	}
 }
 
 var stinkBugs = document.getElementById('stink');
@@ -263,17 +266,31 @@ noMatchOKBtn.addEventListener('click', noMatchOKBtnClick);
 
 function noMatchOKBtnClick (){
 	if (player1Turn) {
+		p1StinkScoreBoard += 1;
+		stinkScore1.innerHTML = p1StinkScoreBoard;
+		stinkCounter -= 1;
+		stinkCount.innerHTML = stinkCounter;
 		player1Turn = false;
 		playerTurn.innerHTML = "Player 2";
 		colorDisplayValue = "";
 		colorDisplay.innerHTML = "Click for Color";
 		colorDisplay.className = colorDisplay.className.substring(0, colorDisplay.className.indexOf(' '));
+		if (p1StinkScoreBoard === 3) {
+			endGame();
+		}
 	} else {
+		p2StinkScoreBoard += 1;
+		stinkScore2.innerHTML = p2StinkScoreBoard;
+		stinkCounter -= 1;
+		stinkCount.innerHTML = stinkCounter;
 		player1Turn = true;
 		playerTurn.innerHTML = "Player 1";
 		colorDisplayValue = "";
 		colorDisplay.innerHTML = "Click for Color";
 		colorDisplay.className = colorDisplay.className.substring(0, colorDisplay.className.indexOf(' '));
+		if (p2StinkScoreBoard === 3) {
+			endGame();
+		}
 	}
 	noMatchMessage.style.display = "none";
 } 
