@@ -6,7 +6,7 @@ var count = 1;
 var player1Turn = true;
 var boardSize = 16;
 var stinkBugs = 5;
-
+var stinkBugsMaster = "ÖÖÖÖÖ";
 ///////////////////////////////////////////////////////////////////////////
 //Game Start function
 var gameStart = document.getElementById("start");
@@ -36,7 +36,7 @@ function startGame(){
 	colorDisplayValue = "";
 	colorDisplay.innerHTML = "Click for Color";
 //	colorDisplay.className = colorDisplay.className.substring(0, colorDisplay.className.indexOf(' '));
-	stinkCount.innerHTML = "5";
+	stinkCount.innerHTML = "ÖÖÖÖÖ";
 }
 
 ///////////////////////////////////////////////////////////////////////////
@@ -231,9 +231,12 @@ var stinkBugs = document.getElementById('stink');
 var stinkScore1 = document.getElementById('stinkScore1');
 var stinkScore2 = document.getElementById('stinkScore2');
 var stinkCount = document.getElementById('stinkCount');
+var p1BugBox = document.getElementById('p1BugBox');
+var p2BugBox = document.getElementById('p2BugBox');
 var stinkCounter = 5;
 var p1StinkScoreBoard = 0;
 var p2StinkScoreBoard = 0;
+
 //stinkBugs.addEventListener('click', addStinkBug)
 
 ///////////////////////////////////////////////////////////////////////////
@@ -250,12 +253,18 @@ noMatchOKBtn.addEventListener('click', noMatchOKBtnClick);
 
 function noMatchOKBtnClick (){
 	if (player1Turn) {
+		p1BugBox.innerHTML += "Ö";
+		stinkCount.innerHTML = stinkBugsMaster;
 		p1StinkScoreBoard += 1;
 		stinkScore1.innerHTML = p1StinkScoreBoard;
 		stinkCounter -= 1;
-		stinkCount.innerHTML = stinkCounter;
+//		for (var i = 0; i < stinkCounter; i++){
+//			stinkCount.innerHTML = stinkBugsMaster.slice(0, -i);
+//		}
+//		stinkCount.innerHTML = stinkCounter;
 		player1Turn = false;
 		playerTurn.innerHTML = "Player 2";
+		playerTurn.style.backgroundColor = "#FF8C00";
 		colorDisplayValue = "";
 		colorDisplay.innerHTML = "Click for Color";
 		colorDisplay.className = colorDisplay.className.substring(0, colorDisplay.className.indexOf(' '));
@@ -263,12 +272,18 @@ function noMatchOKBtnClick (){
 			endGame();
 		}
 	} else {
+		p2BugBox.innerHTML += "Ö";
+		stinkCount.innerHTML = stinkBugsMaster;
 		p2StinkScoreBoard += 1;
 		stinkScore2.innerHTML = p2StinkScoreBoard;
 		stinkCounter -= 1;
-		stinkCount.innerHTML = stinkCounter;
+//		for (var i = 0; i < stinkCounter; i++){
+//			stinkCount.innerHTML = stinkBugsMaster.slice(0, -i);
+//		}
+//		stinkCount.innerHTML = stinkCounter;
 		player1Turn = true;
 		playerTurn.innerHTML = "Player 1";
+		playerTurn.style.backgroundColor = "#90EE90";
 		colorDisplayValue = "";
 		colorDisplay.innerHTML = "Click for Color";
 		colorDisplay.className = colorDisplay.className.substring(0, colorDisplay.className.indexOf(' '));
@@ -276,9 +291,13 @@ function noMatchOKBtnClick (){
 			endGame();
 		}
 	}
+		for (var i = 5; i > stinkCounter ; i--){
+		stinkCount.innerHTML = Array(i).join("Ö");
+	}
 	noMatchMessage.style.display = "none";
 } 
 
+var bugChar = "Ö"
 ///////////////////////////////////////////////////////////////////////////
 //End Game function
 
