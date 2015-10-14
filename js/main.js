@@ -32,7 +32,9 @@ function startGame(){
 		}
 	} 
 	playerTurn.innerHTML = "Player 1";
-	colorDisplay.innerHTML = "Click for Color";
+	colorDisplayValue = ""
+	colorDisplay.innerHTML = "Click for Color"
+	colorDisplay.className = colorDisplay.className.substring(0, colorDisplay.className.indexOf(' '));
 	stinkCount.innerHTML = "5";
 }
 
@@ -66,25 +68,30 @@ var rng = function() {
     if (num > 0.75) {
         console.log("red");
         colorDisplayValue = "red";
-        (colorDisplay.innerHTML = "Red", colorDisplay.style.backgroundColor = "red");
+        colorDisplay.innerHTML = "Red";
+        colorDisplay.className = 'topMenu red';
         areAllHidden();
         return;
     } else if (num < 0.25) {
         console.log("blue");
         colorDisplayValue = "blue";
-        (colorDisplay.innerHTML = "Blue", colorDisplay.style.backgroundColor = "blue");
+        colorDisplay.innerHTML = "Blue";
+        colorDisplay.className = 'topMenu blue';
          areAllHidden();
          return;
     } else if ((num > 0.25) && (num < 0.5)) {
         console.log("yellow");
         colorDisplayValue = "yellow";
-        (colorDisplay.innerHTML = "Yellow", colorDisplay.style.backgroundColor = "yellow");
+        colorDisplay.innerHTML = "Yellow";
+        colorDisplay.className = 'topMenu yellow';
         areAllHidden();
         return;
     } else {
         console.log("purple");
         colorDisplayValue = "purple";
-        (colorDisplay.innerHTML = "Purple", colorDisplay.style.backgroundColor = "purple");
+        colorDisplay.innerHTML = "Purple";
+        console.log(colorDisplay.className)
+        colorDisplay.className = 'topMenu purple';
         areAllHidden();
         return;
         }
@@ -108,8 +115,11 @@ var clickCell = function(event) {
 			player1Turn = false;
 			playerTurn.innerHTML = "Player 2"
 			colorDisplayValue = ""
-			colorDisplay.innerHTML = "Click for Color"
-			colorDisplay.style.backgroundColor = ""
+			colorDisplay.innerHTML = "Click for Color";
+			// colorDisplay.style.backgroundColor = "";
+			console.log(colorDisplay.className)
+			colorDisplay.className = colorDisplay.className.substring(0, colorDisplay.className.indexOf(' '));
+			console.log(colorDisplay.className)
 		} else {
 			console.log("no match");
 	//		alert("Sorry, not a match!");
@@ -124,7 +134,10 @@ var clickCell = function(event) {
 			playerTurn.innerHTML = "Player 1"
 			colorDisplayValue = ""
 			colorDisplay.innerHTML = "Click for Color"
-			colorDisplay.style.backgroundColor = ""
+			console.log(colorDisplay.className)
+			colorDisplay.className = colorDisplay.className.substring(0, colorDisplay.className.indexOf(' '));
+			console.log(colorDisplay.className)
+			// colorDisplay.style.backgroundColor = ""
 		} else {
 			console.log("no match");
 	//		alert("Sorry, not a match!");
@@ -167,7 +180,8 @@ function addStinkBug(event){
 		playerTurn.innerHTML = "Player 2"
 		colorDisplayValue = ""
 		colorDisplay.innerHTML = "Click for Color"
-		colorDisplay.style.backgroundColor = ""
+		colorDisplay.className = colorDisplay.className.substring(0, colorDisplay.className.indexOf(' '));
+		//colorDisplay.style.backgroundColor = ""
 		if (p1StinkScoreBoard === 3) {
 //			alert("Uh-oh, Player 1 has 3 stink bugs!  Player 1 loses!");
 		}
@@ -180,7 +194,8 @@ function addStinkBug(event){
 		playerTurn.innerHTML = "Player 1"
 		colorDisplayValue = ""
 		colorDisplay.innerHTML = "Click for Color"
-		colorDisplay.style.backgroundColor = ""
+		colorDisplay.className = colorDisplay.className.substring(0, colorDisplay.className.indexOf(' '));
+		//colorDisplay.style.backgroundColor = ""
 		if (p2StinkScoreBoard === 3) {
 //			alert("Uh-oh, Player 2 has 3 stink bugs!  Player 2 loses!");
 		}
