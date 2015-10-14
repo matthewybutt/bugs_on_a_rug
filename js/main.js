@@ -34,7 +34,7 @@ function startGame(){
 	playerTurn.innerHTML = "Player 1";
 	colorDisplayValue = ""
 	colorDisplay.innerHTML = "Click for Color"
-	colorDisplay.className = colorDisplay.className.substring(0, colorDisplay.className.indexOf(' '));
+//	colorDisplay.className = colorDisplay.className.substring(0, colorDisplay.className.indexOf(' '));
 	stinkCount.innerHTML = "5";
 }
 
@@ -66,11 +66,11 @@ function howToPlay(){
 	howToMsg.style.display = "block";
 }
 
-var howToOutBtn = document.getElementById('howToOutBtn')
+var howToOKBtn = document.getElementById('howToOKBtn')
 
-howToOutBtn.addEventListener('click', howToOutBtnClick);
+howToOKBtn.addEventListener('click', howToOKBtnClick);
 
-function howToOutBtnClick (){
+function howToOKBtnClick (){
 	howToMsg.style.display = "none";
 } 
 
@@ -177,8 +177,9 @@ function areAllHidden() {
 			hidden += 1;
 		}
 	} if (hidden === 4) {
-		alert("Uh-oh, there's no matching bugs for you!  You lose your turn and get a stink bug!");
+//		alert("Uh-oh, there's no matching bugs for you!  You lose your turn and get a stink bug!");
 		addStinkBug();
+		noMatch();
 	} endGame();
 }
 
@@ -231,16 +232,88 @@ var p2StinkScoreBoard = 0;
 
 function endGame(){
 	if (p1StinkScoreBoard === 3) {
-		alert("Uh-oh, Player 1 has 3 stink bugs!  Player 2 wins!  The game is over!  Thanks for playing Bugs On A Rug!  Click the 'Start' button to play again!");
-		restartGame();
+//		alert("Uh-oh, Player 1 has 3 stink bugs!  Player 2 wins!  The game is over!  Thanks for playing Bugs On A Rug!  Click the 'Start' button to play again!");
+		p1ThreeStinkBugs();
+//		restartGame();
 	} else if (p2StinkScoreBoard === 3) {
-		alert("Uh-oh, Player 2 has 3 stink bugs!  Player 1 wins!  The game is over!  Thanks for playing Bugs On A Rug!  Click the 'Start' button to play again!");
-		restartGame();
+//		alert("Uh-oh, Player 2 has 3 stink bugs!  Player 1 wins!  The game is over!  Thanks for playing Bugs On A Rug!  Click the 'Start' button to play again!");
+		p2ThreeStinkBugs();
+//		restartGame();
 	} else if ((p1ScoreBoard + p2ScoreBoard) === boardSize) {
-		alert("WOW!  You both cleared the board, good for you!  The game is over!  Thanks for playing Bugs On A Rug!  Click the 'Start' button to play again!");
-		restartGame();
-	}
+//		alert("WOW!  You both cleared the board, good for you!  The game is over!  Thanks for playing Bugs On A Rug!  Click the 'Start' button to play again!");
+		clearAll3Message();
+//		restartGame();
+	} 
 }
+
+///////////////////////////////////////////////////////////////////////////
+//No Match Alert function
+var noMatchMessage = document.getElementById('noMatchMessage')
+
+function noMatch(){	
+	noMatchMessage.style.display = "block";
+}
+
+var noMatchOKBtn = document.getElementById('noMatchOKBtn')
+
+noMatchOKBtn.addEventListener('click', noMatchOKBtnClick);
+
+function noMatchOKBtnClick (){
+	noMatchMessage.style.display = "none";
+} 
+
+///////////////////////////////////////////////////////////////////////////
+//3 Stink Bugs Alert function
+//Player 1 Loses
+var p1StinkMessage = document.getElementById('p1StinkMessage')
+
+function p1ThreeStinkBugs(){	
+	p1StinkMessage.style.display = "block";
+}
+
+var p1StinkOKBtn = document.getElementById('p1StinkOKBtn')
+
+p1StinkOKBtn.addEventListener('click', p1StinkOKBtnClick);
+
+function p1StinkOKBtnClick (){
+	p1StinkMessage.style.display = "none";
+	restartGame();
+} 
+
+//Player 2 Loses
+var p2StinkMessage = document.getElementById('p2StinkMessage')
+
+function p2ThreeStinkBugs(){	
+	p2StinkMessage.style.display = "block";
+}
+
+var p2StinkOKBtn = document.getElementById('p2StinkOKBtn')
+
+p2StinkOKBtn.addEventListener('click', p2StinkOKBtnClick);
+
+function p2StinkOKBtnClick (){
+	p2StinkMessage.style.display = "none";
+	restartGame();
+} 
+
+///////////////////////////////////////////////////////////////////////////
+//All Clear Alert function
+
+var clearMessage = document.getElementById('clearMessage')
+
+function clearAll3Message(){	
+	clearMessage.style.display = "block";
+}
+
+var clearOKBtn = document.getElementById('clearOKBtn')
+
+clearOKBtn.addEventListener('click', clearOKBtnClick);
+
+function clearOKBtnClick (){
+	clearMessage.style.display = "none";
+	restartGame();
+} 
+
 
 
 /*
