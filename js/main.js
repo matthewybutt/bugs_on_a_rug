@@ -1,15 +1,15 @@
 console.log("Bugs On A Rug");
 
 var rugBoard = [];
-var colorDisplayValue = ""
+var colorDisplayValue = "";
 var count = 1;
 var player1Turn = true;
-var boardSize = 16
-var stinkBugs = 5
+var boardSize = 16;
+var stinkBugs = 5;
 
 ///////////////////////////////////////////////////////////////////////////
 //Game Start function
-var gameStart = document.getElementById("start")
+var gameStart = document.getElementById("start");
 
 gameStart.addEventListener('click', startGame);
 
@@ -32,15 +32,15 @@ function startGame(){
 		}
 	} 
 	playerTurn.innerHTML = "Player 1";
-	colorDisplayValue = ""
-	colorDisplay.innerHTML = "Click for Color"
+	colorDisplayValue = "";
+	colorDisplay.innerHTML = "Click for Color";
 //	colorDisplay.className = colorDisplay.className.substring(0, colorDisplay.className.indexOf(' '));
 	stinkCount.innerHTML = "5";
 }
 
 ///////////////////////////////////////////////////////////////////////////
 //Restart Game button function
-var restart = document.getElementById("restart")
+var restart = document.getElementById("restart");
 
 restart.addEventListener('click', restartGame);
 
@@ -58,7 +58,7 @@ function restartGame(){
 //function howToPlay (){
 //	alert("Bugs On A Rug is a matching game where players try and clear the bugs off of the rug! On your turn click the color selector button and match the color of the bug given to you to clear it off the rug. If you can't make a match you get a stink bug, collect 3 stink bugs and you lose!");
 //}
-var howToMsg = document.getElementById('howToMessage')
+var howToMsg = document.getElementById('howToMessage');
 
 howTo.addEventListener('click', howToPlay);
 
@@ -66,7 +66,7 @@ function howToPlay(){
 	howToMsg.style.display = "block";
 }
 
-var howToOKBtn = document.getElementById('howToOKBtn')
+var howToOKBtn = document.getElementById('howToOKBtn');
 
 howToOKBtn.addEventListener('click', howToOKBtnClick);
 
@@ -112,7 +112,7 @@ var rng = function() {
         }
 }
 
-var colorSelect = document.getElementById("rcs");
+//var colorSelect = document.getElementById("rcs");
 var colorDisplay = document.getElementById("colorDisplay");
 
 //colorSelect.addEventListener('click', rng);
@@ -128,13 +128,13 @@ var clickCell = function(event) {
 			p1Score.innerHTML = p1ScoreBoard;
 			this.style.visibility = "hidden";
 			player1Turn = false;
-			playerTurn.innerHTML = "Player 2"
-			colorDisplayValue = ""
+			playerTurn.innerHTML = "Player 2";
+			colorDisplayValue = "";
 			colorDisplay.innerHTML = "Click for Color";
 			// colorDisplay.style.backgroundColor = "";
 			console.log(colorDisplay.className)
 			colorDisplay.className = colorDisplay.className.substring(0, colorDisplay.className.indexOf(' '));
-			console.log(colorDisplay.className)
+			console.log(colorDisplay.className);
 		} else {
 			console.log("no match");
 	//		alert("Sorry, not a match!");
@@ -146,12 +146,12 @@ var clickCell = function(event) {
 			p2Score.innerHTML = p2ScoreBoard;
 			this.style.visibility = "hidden";
 			player1Turn = true;
-			playerTurn.innerHTML = "Player 1"
+			playerTurn.innerHTML = "Player 1";
 			colorDisplayValue = ""
-			colorDisplay.innerHTML = "Click for Color"
-			console.log(colorDisplay.className)
+			colorDisplay.innerHTML = "Click for Color";
+			console.log(colorDisplay.className);
 			colorDisplay.className = colorDisplay.className.substring(0, colorDisplay.className.indexOf(' '));
-			console.log(colorDisplay.className)
+			console.log(colorDisplay.className);
 			// colorDisplay.style.backgroundColor = ""
 		} else {
 			console.log("no match");
@@ -164,7 +164,7 @@ var p1ScoreBoard = 0;
 var p2ScoreBoard = 0;
 var p1Score = document.getElementById('score1');
 var p2Score = document.getElementById('score2');
-var playerTurn = document.getElementById('playerTurn')
+var playerTurn = document.getElementById('playerTurn');
 
 
 ///////////////////////////////////////////////////////////////////////////
@@ -193,26 +193,26 @@ function addStinkBug(event){
 		stinkScore1.innerHTML = p1StinkScoreBoard;
 		stinkCounter -= 1;
 		stinkCount.innerHTML = stinkCounter;
-		player1Turn = false;
-		playerTurn.innerHTML = "Player 2"
-		colorDisplayValue = ""
-		colorDisplay.innerHTML = "Click for Color"
-		colorDisplay.className = colorDisplay.className.substring(0, colorDisplay.className.indexOf(' '));
+//		player1Turn = false;
+//		playerTurn.innerHTML = "Player 2";
+//		colorDisplayValue = "";
+//		colorDisplay.innerHTML = "Click for Color";
+//		colorDisplay.className = colorDisplay.className.substring(0, colorDisplay.className.indexOf(' '));
 		//colorDisplay.style.backgroundColor = ""
 		if (p1StinkScoreBoard < 3) {
 			noMatch();
 //			alert("Uh-oh, Player 1 has 3 stink bugs!  Player 1 loses!");
 		}
 	} else {
-		p2StinkScoreBoard += 1
+		p2StinkScoreBoard += 1;
 		stinkScore2.innerHTML = p2StinkScoreBoard;
 		stinkCounter -= 1;
 		stinkCount.innerHTML = stinkCounter;
-		player1Turn = true;
-		playerTurn.innerHTML = "Player 1"
-		colorDisplayValue = ""
-		colorDisplay.innerHTML = "Click for Color"
-		colorDisplay.className = colorDisplay.className.substring(0, colorDisplay.className.indexOf(' '));
+//		player1Turn = true;
+//		playerTurn.innerHTML = "Player 1";
+//		colorDisplayValue = "";
+//		colorDisplay.innerHTML = "Click for Color";
+//		colorDisplay.className = colorDisplay.className.substring(0, colorDisplay.className.indexOf(' '));
 		//colorDisplay.style.backgroundColor = ""
 		if (p2StinkScoreBoard < 3) {
 			noMatch();
@@ -225,7 +225,7 @@ var stinkBugs = document.getElementById('stink');
 var stinkScore1 = document.getElementById('stinkScore1');
 var stinkScore2 = document.getElementById('stinkScore2');
 var stinkCount = document.getElementById('stinkCount');
-var stinkCounter = 5
+var stinkCounter = 5;
 var p1StinkScoreBoard = 0;
 var p2StinkScoreBoard = 0;
 //stinkBugs.addEventListener('click', addStinkBug)
@@ -251,30 +251,43 @@ function endGame(){
 
 ///////////////////////////////////////////////////////////////////////////
 //No Match Alert function
-var noMatchMessage = document.getElementById('noMatchMessage')
+var noMatchMessage = document.getElementById('noMatchMessage');
 
 function noMatch(){	
 	noMatchMessage.style.display = "block";
 }
 
-var noMatchOKBtn = document.getElementById('noMatchOKBtn')
+var noMatchOKBtn = document.getElementById('noMatchOKBtn');
 
 noMatchOKBtn.addEventListener('click', noMatchOKBtnClick);
 
 function noMatchOKBtnClick (){
+	if (player1Turn) {
+		player1Turn = false;
+		playerTurn.innerHTML = "Player 2";
+		colorDisplayValue = "";
+		colorDisplay.innerHTML = "Click for Color";
+		colorDisplay.className = colorDisplay.className.substring(0, colorDisplay.className.indexOf(' '));
+	} else {
+		player1Turn = true;
+		playerTurn.innerHTML = "Player 1";
+		colorDisplayValue = "";
+		colorDisplay.innerHTML = "Click for Color";
+		colorDisplay.className = colorDisplay.className.substring(0, colorDisplay.className.indexOf(' '));
+	}
 	noMatchMessage.style.display = "none";
 } 
 
 ///////////////////////////////////////////////////////////////////////////
 //3 Stink Bugs Alert function
 //Player 1 Loses
-var p1StinkMessage = document.getElementById('p1StinkMessage')
+var p1StinkMessage = document.getElementById('p1StinkMessage');
 
 function p1ThreeStinkBugs(){	
 	p1StinkMessage.style.display = "block";
 }
 
-var p1StinkOKBtn = document.getElementById('p1StinkOKBtn')
+var p1StinkOKBtn = document.getElementById('p1StinkOKBtn');
 
 p1StinkOKBtn.addEventListener('click', p1StinkOKBtnClick);
 
@@ -284,13 +297,13 @@ function p1StinkOKBtnClick (){
 } 
 
 //Player 2 Loses
-var p2StinkMessage = document.getElementById('p2StinkMessage')
+var p2StinkMessage = document.getElementById('p2StinkMessage');
 
 function p2ThreeStinkBugs(){	
 	p2StinkMessage.style.display = "block";
 }
 
-var p2StinkOKBtn = document.getElementById('p2StinkOKBtn')
+var p2StinkOKBtn = document.getElementById('p2StinkOKBtn');
 
 p2StinkOKBtn.addEventListener('click', p2StinkOKBtnClick);
 
@@ -302,13 +315,13 @@ function p2StinkOKBtnClick (){
 ///////////////////////////////////////////////////////////////////////////
 //All Clear Alert function
 
-var clearMessage = document.getElementById('clearMessage')
+var clearMessage = document.getElementById('clearMessage');
 
 function clearAll3Message(){	
 	clearMessage.style.display = "block";
 }
 
-var clearOKBtn = document.getElementById('clearOKBtn')
+var clearOKBtn = document.getElementById('clearOKBtn');
 
 clearOKBtn.addEventListener('click', clearOKBtnClick);
 
