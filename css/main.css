@@ -162,6 +162,14 @@ h1 {
 	font-weight: bold;
 }
 
+.p1 {
+	background-color: #90EE90;
+}
+
+.p2 {
+	background-color: #FF8C00;
+}
+
 .collect {
 	font-family: 'Coming Soon', cursive;
 	font-weight: bold;
