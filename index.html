@@ -4,7 +4,6 @@
 	<meta charset="UTF-8">
 	<title>Bugs On A Rug</title>
 	<link rel="stylesheet" href="css/main.css">
-	<link href='https://fonts.googleapis.com/css?family=Indie+Flower|Josefin+Sans' rel='stylesheet' type='text/css'>
 	<link href='https://fonts.googleapis.com/css?family=Coming+Soon|Short+Stack' rel='stylesheet' type='text/css'>
 </head>
 <body class="body">
@@ -40,7 +39,7 @@
 			<div class="container" id ="container1">
 				<div class="score player p1">Player 1</div>
 				<div class="score collect">Bugs Collected</div>
-				<div class="score player" id="score1"></div>
+				<div class="score player" id="score1">0</div>
 				<div class="score collect">Stink Bugs</div>
 				<div class="score player" id="stinkScore1"></div>
 			</div>
@@ -67,7 +66,7 @@
 			<div class="container" id ="container2">
 				<div class="score player p2">Player 2</div>
 				<div class="score collect">Bugs Collected</div>
-				<div class="score player" id="score2"></div>
+				<div class="score player" id="score2">0</div>
 				<div class="score collect">Stink Bugs</div>
 				<div class="score player" id="stinkScore2"></div>
 			</div>
@@ -76,12 +75,12 @@
 
 		<br>
 
-		<button id="howTo">How to Play</button>
-		<button id="restart">Refresh</button>
+		<div id="howTo">How to Play</div>
+		<div id="restart">Refresh</div>
 
 		<div id="howToMessage">
 			<h3> <u> How to Play </u> </h3>
-			<p>Bugs On A Rug is a matching game where players try and clear the bugs off of the rug! On your turn click the color selector button and match the color of the bug given to you to clear it off the rug. If you can't make a match you get a stink bug, collect 3 stink bugs and you lose!</p>
+			<p>Bugs On A Rug is a matching game where players try and clear the bugs off of the rug!<br>On your turn click the "Click for Color" button and match it to the color of a bug on the rug to clear it.<br>If you can't make a match you get a stink bug, collect 3 stink bugs and you lose!<br>Good luck and have fun!</p>
 			<button id="howToOKBtn">OK</button>
 		</div>
 

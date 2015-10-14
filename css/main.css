@@ -1,6 +1,4 @@
-/*
-font-family: 'Indie Flower', cursive; <-don't use
-font-family: 'Josefin Sans', sans-serif; <-don't use
+/* FONTS USED *****************************************************************
 font-family: 'Coming Soon', cursive;
 font-family: 'Short Stack', cursive;
 */
@@ -26,6 +24,23 @@ font-family: 'Short Stack', cursive;
 h1 {
 	margin: 15px;
 }
+/* START BUTTON *****************************************************************/
+#start {
+	font-family: 'Short Stack', cursive;
+	color: #006400;
+	font-weight: bold;
+	font-size: 30px;
+	display: inline-block;
+	margin-bottom: 10px;
+	background-color: #98FB98;
+	border: 5px dotted #006400;
+	border-radius: 30px;
+	width: 150px;
+	height: 40px;
+	padding-top: 3px; 
+}
+
+/* TOP MENU *****************************************************************/
 
 #topOfBoard {
 	display: inline-block;
@@ -73,7 +88,7 @@ h1 {
 
 #playerTurn {
 	display: inline-block;
-	border: 1px solid black;
+	border: 3px solid black;
 	border-radius: 30px;
 	text-align: center;
 	vertical-align: center;
@@ -88,7 +103,7 @@ h1 {
 
 #colorDisplay {
 	display: inline-block;
-	border: 1px solid black;
+	border: 3px solid black;
 	border-radius: 30px;
 	text-align: center;
 	vertical-align: center;
@@ -103,15 +118,17 @@ h1 {
 
 #stinkCount {
 	display: inline-block;
-	border: 1px solid green;
+	border: 3px solid green;
 	border-radius: 30px;
 	text-align: center;
 	vertical-align: center;
 	font-weight: bolder;
 }
 
+/* BOARD CONTAINERS *****************************************************************/
+
 #innerContainer {
-	width: 768px;
+	min-width: 820px; 
 	max-height: auto;
 	margin: auto;
 	position: relative;
@@ -120,7 +137,8 @@ h1 {
 
 .board {
 	display: inline-block;
-	border: 1px solid blue;
+	border: 10px dotted #A4E3FF;
+	background: rgba(255,255,255,.4);
 	width: 500px;
 	margin: auto;
 	padding: 5px;
@@ -141,13 +159,15 @@ h1 {
 	line-height: 100px;
 }
 
+/* PLAYER CONTAINERS *****************************************************************/
+
 .container {
 	display: inline-block;
 	height: auto;
-	width: 100px;
+	width: 110px;
 	position: relative;
 	text-align: center;
-	vertical-align: center;
+	vertical-align: top;
 }
 
 .score {
@@ -155,7 +175,7 @@ h1 {
     border-radius: 30px;
     border: 1px solid black;
     height: 50px;
-    width: 105px;
+    width: 115px;
     text-align: center;
     vertical-align: center;
     line-height: 50px;
@@ -183,35 +203,46 @@ h1 {
 }
 
 #container1 {
-	float: left;
+	margin-right: 25px;
 }
 
 #container2 {
-	float: right;
+	margin-left: 25px;
 }
 
-#start {
-	font-family: 'Short Stack', cursive;
-	color: #8B0000;
-	font-weight: bold;
-	font-size: 30px;
-	display: inline-block;
-	margin-bottom: 10px;
-	background-color: #F08080;
-	border: 5px dotted #B22222;
-	border-radius: 30px;
-	width: 150px;
-	height: 40px;
-	padding-top: 3px; 
-}
+/* BOTTOM MENU *****************************************************************/
 
 #howTo {
 	display: inline-block;
+	font-family: 'Short Stack', cursive;
+	color: #8B0000;
+	font-weight: bold;
+	font-size: 15px;
+	display: inline-block;
+	margin-right: 10px;
+	background-color: #F08080;
+	border: 4px dotted #8B0000;
+	border-radius: 30px;
+	width: 110px;
+	height: 20px;
 }
 
 #restart {
 	display: inline-block;
+	font-family: 'Short Stack', cursive;
+	color: #8B0000;
+	font-weight: bold;
+	font-size: 15px;
+	display: inline-block;
+	margin-left: 10px;
+	background-color: #F08080;
+	border: 4px dotted #8B0000;
+	border-radius: 30px;
+	width: 110px;
+	height: 20px;
 }
+
+/* BACKGROUND COLORS FOR JAVASCRIPT *****************************************************************/
 
 .purple {
 	background-color: purple;
@@ -231,16 +262,34 @@ h1 {
 	color: white;
 }
 
+/* POP UP MESSAGES *****************************************************************/
+
+h3 {
+	font-family: 'Short Stack', cursive;
+	font-weight: bolder;
+}
+
+h4 {
+	font-family: 'Short Stack', cursive;
+	font-weight: bolder;
+}
+
+p {
+	font-family: 'Short Stack', cursive;
+	font-size: 14px;
+}
+
 #howToMessage {
     display: none;
     position: relative;
-    width: 300px;
-    height: 200px;
+    width: 310px;
+    height: 270px;
     margin: 0 auto 0;
-    top: -450px;
-    border: solid 10px black;
+    top: -500px;
+    border: double 10px black;
     border-radius: 30px;
-    background-color: #C0C0C0;
+    background-color: #FFFFE0;
+    padding: 0 10px 10px;
 }
 
 #noMatchMessage {
