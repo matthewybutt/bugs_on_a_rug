@@ -1,3 +1,10 @@
+/*
+font-family: 'Indie Flower', cursive; <-don't use
+font-family: 'Josefin Sans', sans-serif; <-don't use
+font-family: 'Coming Soon', cursive;
+font-family: 'Short Stack', cursive;
+*/
+
 .body {
 	background-color: #A4E3FF;
 }
@@ -11,7 +18,13 @@
 }
 
 .titleBanner{
+	font-family: 'Short Stack', cursive;
+	font-weight: bolder;
+	font-size: 30px;
+	}
 
+h1 {
+	margin: 15px;
 }
 
 #topOfBoard {
@@ -25,20 +38,27 @@
 
 .topOfMenu {
 	display: inline-block; 
-	width: auto;
-	height: 25px;
+	width: 150px;
+	height: 30px;
 	text-align: center;
 	vertical-align: center;
-	line-height: 25px;
+	line-height: 30px;
+	font-family: 'Coming Soon', cursive;
+	font-weight: bold;
+	font-size: 20px;
+
 }
 
 .topMenu {
 	display: inline-block; 
-	width: auto;
+	width: 150px;
 	height: 50px;
 	text-align: center;
 	vertical-align: center;
 	line-height: 50px;
+	font-family: 'Short Stack', cursive;
+	font-size: 17px;
+
 }
 
 #playerTurnTop {
@@ -46,7 +66,6 @@
 	border: 1px solid blue;
 	text-align: center;
 	vertical-align: center;
-	width: 105px;
 }
 
 #playerTurn {
@@ -54,7 +73,6 @@
 	border: 1px solid blue;
 	text-align: center;
 	vertical-align: center;
-	width: 105px;
 }
 
 #colorDisplayTop {
@@ -62,7 +80,6 @@
 	border: 1px solid black;
 	text-align: center;
 	vertical-align: center;
-	width: 105px;
 }
 
 #colorDisplay {
@@ -70,7 +87,6 @@
 	border: 1px solid black;
 	text-align: center;
 	vertical-align: center;
-	width: 105px;
 }
 
 #stinkCountTop {
@@ -78,7 +94,6 @@
 	border: 1px solid green;
 	text-align: center;
 	vertical-align: center;
-	width: 105px;
 }
 
 #stinkCount {
@@ -86,7 +101,6 @@
 	border: 1px solid green;
 	text-align: center;
 	vertical-align: center;
-	width: 105px;
 }
 
 #innerContainer {
@@ -131,7 +145,7 @@
 
 .score {
     display: inline-block;
-    border-radius: 25%;
+    border-radius: 30px;
     border: 1px solid black;
     height: 50px;
     width: 105px;
@@ -140,6 +154,17 @@
     line-height: 50px;
     word-wrap: break-word;
     overflow: auto;
+    margin-bottom: 10px;
+}
+
+.player {
+	font-family: 'Short Stack', cursive;
+	font-weight: bold;
+}
+
+.collect {
+	font-family: 'Coming Soon', cursive;
+	font-weight: bold;
 }
 
 #container1 {
@@ -151,8 +176,18 @@
 }
 
 #start {
+	font-family: 'Short Stack', cursive;
+	color: #8B0000;
+	font-weight: bold;
+	font-size: 30px;
 	display: inline-block;
 	margin-bottom: 10px;
+	background-color: #F08080;
+	border: 5px dotted #B22222;
+	border-radius: 30px;
+	width: 150px;
+	height: 40px;
+	padding-top: 3px; 
 }
 
 #howTo {
