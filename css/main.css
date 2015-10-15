@@ -15,6 +15,7 @@ font-family: 'Short Stack', cursive;
 	margin: auto;
 	position: relative;
 	text-align: center;
+	font-family: 'Short Stack', cursive;
 }
 
 .titleBanner{
@@ -24,9 +25,34 @@ font-family: 'Short Stack', cursive;
 	}
 
 h1 {
-	margin: 10px;
+margin: 0px;
 }
-/* START BUTTON *****************************************************************/
+/* TOP BUTTON MENU *****************************************************************/
+#buttonMenu {
+    display: inline-block;
+    border-radius: 30px;
+    width: auto;
+    height: auto;
+    float: top;
+    position: relative;
+    padding-top: 5px;
+    margin-bottom: 5px;
+}
+
+#howToButton {
+    display: inline-block;
+    font-family: 'Short Stack', cursive;
+    color: DarkGoldenrod;
+    font-weight: bold;
+    font-size: 15px;
+    background-color: #FFFACD;
+    border: 4px dotted DarkGoldenrod;
+    border-radius: 30px;
+    width: 110px;
+    height: 20px;
+    padding: 5px;
+}
+
 #startButton {
 	font-family: 'Short Stack', cursive;
 	color: #006400;
@@ -40,6 +66,20 @@ h1 {
 	width: 150px;
 	height: 40px;
 	padding-top: 3px; 
+}
+
+#restartButton {
+    display: inline-block;
+    font-family: 'Short Stack', cursive;
+    color: #8B0000;
+    font-weight: bold;
+    font-size: 15px;
+    background-color: #F08080;
+    border: 4px dotted #8B0000;
+    border-radius: 30px;
+    width: 110px;
+    height: 20px;
+    padding: 5px;
 }
 
 /* TOP MENU *****************************************************************/
@@ -213,39 +253,6 @@ h1 {
 	font-weight: bold;
 }
 
-
-/* BOTTOM MENU *****************************************************************/
-
-#howToButton {
-	display: inline-block;
-	font-family: 'Short Stack', cursive;
-	color: #8B0000;
-	font-weight: bold;
-	font-size: 15px;
-	display: inline-block;
-	margin-right: 10px;
-	background-color: #F08080;
-	border: 4px dotted #8B0000;
-	border-radius: 30px;
-	width: 110px;
-	height: 20px;
-}
-
-#restartButton {
-	display: inline-block;
-	font-family: 'Short Stack', cursive;
-	color: #8B0000;
-	font-weight: bold;
-	font-size: 15px;
-	display: inline-block;
-	margin-left: 10px;
-	background-color: #F08080;
-	border: 4px dotted #8B0000;
-	border-radius: 30px;
-	width: 110px;
-	height: 20px;
-}
-
 /* BACKGROUND COLORS FOR JAVASCRIPT *****************************************************************/
 
 .purple {
@@ -283,17 +290,25 @@ p {
 	font-size: 18px;
 }
 
+ul {
+	text-align: left;
+}
+
 #howToMessage {
     display: none;
     position: relative;
-    width: 310px;
-    height: 350px;
+    width: 340px;
+    height: 355px;
     margin: 0 auto 0;
     top: -500px;
     border: double 10px black;
     border-radius: 30px;
     background-color: #FFFFE0;
     padding: 0 10px 10px;
+}
+
+#howToOKBtn {
+	margin-top: 15px; 
 }
 
 #noMatchMessage {

@@ -13,6 +13,10 @@ var gameStart = document.getElementById("startButton");
 gameStart.addEventListener('click', startGame);
 
 function startGame(){
+	var redCount = 1;
+	var blueCount = 1;
+	var yellowCount = 1;
+	var purpleCount = 1;
 	for (var i = 0; i < boardSize; i++ ) { 
 		rugBoard[i] = document.getElementById('bug' + count++); 
 		rugBoard[i].addEventListener('click', clickCell);
@@ -23,7 +27,7 @@ function startGame(){
         case 15:
           rugBoard[i].data = "red";
           rugBoard[i].style.backgroundColor = "red";
-          rugBoard[i].style.backgroundImage = "url(./images/redbug01.png)";
+          rugBoard[i].style.backgroundImage = "url(./images/redbug0"+(redCount++)+".png)";
           break;
        case 1:
        case 6:
@@ -31,7 +35,7 @@ function startGame(){
        case 12:
           rugBoard[i].data = "blue";
           rugBoard[i].style.backgroundColor = "blue";
-          rugBoard[i].style.backgroundImage = "url(./images/bluebug01.png)"
+          rugBoard[i].style.backgroundImage = "url(./images/bluebug0"+(blueCount++)+".png)";
           break;
        case 2:
        case 7:
@@ -39,13 +43,12 @@ function startGame(){
        case 13:
           rugBoard[i].data = "yellow";
           rugBoard[i].style.backgroundColor = "yellow";
-          rugBoard[i].style.backgroundImage = "url(./images/yellowbug01.png)"
+          rugBoard[i].style.backgroundImage = "url(./images/yellowbug0"+(yellowCount++)+".png)";          
           break;
         default:
           rugBoard[i].data = "purple";
           rugBoard[i].style.backgroundColor = "purple";
-          rugBoard[i].style.backgroundImage = "url(./images/purplebug01.png)"
-      }
+          rugBoard[i].style.backgroundImage = "url(./images/purplebug0"+(purpleCount++)+".png)";      }
   }
 	playerTurnDisplay.innerHTML = "Player 1";
 	playerTurnDisplay.style.backgroundColor = "#90EE90";
