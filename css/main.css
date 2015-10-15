@@ -22,10 +22,10 @@ font-family: 'Short Stack', cursive;
 	}
 
 h1 {
-	margin: 15px;
+	margin: 10px;
 }
 /* START BUTTON *****************************************************************/
-#start {
+#startButton {
 	font-family: 'Short Stack', cursive;
 	color: #006400;
 	font-weight: bolder;
@@ -224,7 +224,7 @@ h1 {
 	height: 20px;
 }
 
-#restart {
+#restartButton {
 	display: inline-block;
 	font-family: 'Short Stack', cursive;
 	color: #8B0000;

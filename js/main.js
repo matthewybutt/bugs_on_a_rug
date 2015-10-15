@@ -9,7 +9,7 @@ var stinkBugs = 5;
 var stinkBugsMaster = "ÖÖÖÖÖ";
 ///////////////////////////////////////////////////////////////////////////
 //Game Start function
-var gameStart = document.getElementById("start");
+var gameStart = document.getElementById("startButton");
 
 gameStart.addEventListener('click', startGame);
 
@@ -35,13 +35,12 @@ function startGame(){
 	playerTurn.style.backgroundColor = "#90EE90";
 	colorDisplayValue = "";
 	colorDisplay.innerHTML = "Click for Color";
-//	colorDisplay.className = colorDisplay.className.substring(0, colorDisplay.className.indexOf(' '));
 	stinkCount.innerHTML = "ÖÖÖÖÖ";
 }
 
 ///////////////////////////////////////////////////////////////////////////
 //Restart Game button function
-var restart = document.getElementById("restart");
+var restart = document.getElementById("restartButton");
 
 restart.addEventListener('click', restartGame);
 
@@ -292,7 +291,11 @@ function noMatchOKBtnClick (){
 		}
 	}
 		for (var i = 5; i > stinkCounter ; i--){
-		stinkCount.innerHTML = Array(i).join("Ö");
+			if (stinkCounter != 0) {
+				stinkCount.innerHTML = Array(i).join("Ö");
+			} else {
+				stinkCount.innerHTML = "All Gone!";
+			}
 	}
 	noMatchMessage.style.display = "none";
 } 
