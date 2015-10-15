@@ -364,6 +364,19 @@ ul {
     background-color: #90EE90;
 }
 
+#coopStinkMessage {
+	display: none;
+    position: relative;
+    width: 275px;
+    height: 265px;
+    padding: 0 15px;
+    margin: 0 auto 0;
+    top: -500px;
+    border: double 10px black;
+    border-radius: 30px;
+    background-color: #DCDCDC;
+}
+
 #allClearMessage {
 	display: none;
     position: relative;

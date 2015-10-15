@@ -144,27 +144,39 @@ colorDisplay.addEventListener('click', randomColorSelect);
 ///////////////////////////////////////////////////////////////////////////
 //Matching Bugs & Score Keeping function
 var clickCell = function(event) {
-	if (player1Turn) {
-		if (this.data === colorDisplayValue) {
-			p1ScoreBoard += 1;
-			p1Score.innerHTML = p1ScoreBoard;
-			player1Turn = false;
-			this.style.visibility = "hidden";
-			playerTurnDisplay.innerHTML = "Player 2";
-			playerTurnDisplay.style.backgroundColor = "#FF8C00";
-			resetMenuMatch();
-		} 
+	console.log("coopMode: " + coopMode);
+	if (coopMode === false) {
+			if (player1Turn) {
+				if (this.data === colorDisplayValue) {
+					p1ScoreBoard += 1;
+					p1Score.innerHTML = p1ScoreBoard;
+					this.style.visibility = "hidden";
+					player1Turn = false;
+					playerTurnDisplay.innerHTML = "Player 2";
+					playerTurnDisplay.style.backgroundColor = "#FF8C00";
+					resetMenuMatch();
+				} 
+			} else {
+				if (this.data === colorDisplayValue) {
+					p2ScoreBoard += 1;
+					p2Score.innerHTML = p2ScoreBoard;
+					this.style.visibility = "hidden";
+					player1Turn = true;
+					playerTurnDisplay.innerHTML = "Player 1";
+					playerTurnDisplay.style.backgroundColor = "#90EE90";
+					resetMenuMatch();
+				} 
+			} endGame();
 	} else {
-		if (this.data === colorDisplayValue) {
-			p2ScoreBoard += 1;
-			p2Score.innerHTML = p2ScoreBoard;
-			player1Turn = true;
-			this.style.visibility = "hidden";
-			playerTurnDisplay.innerHTML = "Player 1";
-			playerTurnDisplay.style.backgroundColor = "#90EE90";
-			resetMenuMatch();
-		} 
-	} endGame();
+		if (player1Turn) {
+			if (this.data === colorDisplayValue) {
+				p1ScoreBoard += 1;
+				p1Score.innerHTML = p1ScoreBoard;
+				this.style.visibility = "hidden";
+				resetMenuMatch();
+			}
+		} endGame();
+	}
 }
 
 var p1ScoreBoard = 0;
@@ -198,12 +210,18 @@ var timer;
 ///////////////////////////////////////////////////////////////////////////
 //Stink Bug & No Match Alert function
 function addStinkBug(event){
-	if (player1Turn) {
-		if (p1StinkScoreBoard < 3) {	
-			noMatch();			
+	if (coopMode === false) {	
+		if (player1Turn) {
+			if (p1StinkScoreBoard < 3) {	
+				noMatch();			
+			}
+		} else {
+			if (p2StinkScoreBoard < 3) {
+				noMatch();
+			}
 		}
-	} else {
-		if (p2StinkScoreBoard < 3) {
+	} else if (player1Turn) {
+		if (p1StinkScoreBoard < 5) {
 			noMatch();
 		}
 	}
@@ -226,13 +244,15 @@ function noMatch(){
 
 var noMatchOKBtn = document.getElementById('noMatchOKBtn');
 noMatchOKBtn.addEventListener('click', noMatchOKBtnClick);
-function noMatchOKBtnClick (){
+/*function noMatchOKBtnClick (){
 	if (player1Turn) {
 		p1BugBox.innerHTML += "Ö";
 		p1StinkScoreBoard += 1;
-		player1Turn = false;
-		playerTurnDisplay.innerHTML = "Player 2";
-		playerTurnDisplay.style.backgroundColor = "#FF8C00";
+		if (coopMode = false) {
+			player1Turn = false;
+			playerTurnDisplay.innerHTML = "Player 2";
+			playerTurnDisplay.style.backgroundColor = "#FF8C00";
+		}
 		resetMenuStink();
 		if (p1StinkScoreBoard === 3) {
 			endGame();
@@ -256,7 +276,48 @@ function noMatchOKBtnClick (){
 			}
 	}
 	noMatchMessage.style.display = "none";
-} 
+} */
+function noMatchOKBtnClick (){
+	if (coopMode === false) {
+		if (player1Turn) {
+			p1BugBox.innerHTML += "Ö";
+			p1StinkScoreBoard += 1;
+			player1Turn = false;
+			playerTurnDisplay.innerHTML = "Player 2";
+			playerTurnDisplay.style.backgroundColor = "#FF8C00";
+			resetMenuStink();
+			if (p1StinkScoreBoard === 3) {
+				endGame();
+			}
+		} else {
+			p2BugBox.innerHTML += "Ö";
+			p2StinkScoreBoard += 1;
+			player1Turn = true;
+			playerTurnDisplay.innerHTML = "Player 1";
+			playerTurnDisplay.style.backgroundColor = "#90EE90";
+			resetMenuStink();
+			if (p2StinkScoreBoard === 3) {
+				endGame();
+			}
+		}	
+	} else {
+		if (player1Turn) {
+			p1BugBox.innerHTML += "Ö";
+			p1StinkScoreBoard += 1;
+			resetMenuStink();
+			if (p1StinkScoreBoard === 5) {
+				endGame();
+			}
+		}
+	} 
+		for (var i = 5; i > stinkCounter ; i--){
+			if (stinkCounter != 0) {
+				stinkCountDisplay.innerHTML = Array(i).join("Ö");
+			} else {
+				stinkCountDisplay.innerHTML = "All Gone!";
+			}
+	} noMatchMessage.style.display = "none"; 
+}
 
 function resetMenuStink(){
 	stinkCountDisplay.innerHTML = stinkBugsMaster;
@@ -269,13 +330,21 @@ function resetMenuStink(){
 ///////////////////////////////////////////////////////////////////////////
 //End Game function
 function endGame(){
-	if (p1StinkScoreBoard === 3) {
-		p1ThreeStinkBugs();
-	} else if (p2StinkScoreBoard === 3) {
-		p2ThreeStinkBugs();
-	} else if ((p1ScoreBoard + p2ScoreBoard) === boardSize) {
-		clearAll3Message();
-	} 
+	if (coopMode === false) {	
+		if (p1StinkScoreBoard === 3) {
+			p1ThreeStinkBugs();
+		} else if (p2StinkScoreBoard === 3) {
+			p2ThreeStinkBugs();
+		} else if ((p1ScoreBoard + p2ScoreBoard) === boardSize) {
+			clearAll3Message();
+		} 
+	} else {
+		if (p1StinkScoreBoard === 5) {
+			coopFiveStinkBugs();
+		} else if (p1ScoreBoard === boardSize) {
+			clearAllMessage();
+		}
+	}
 }
 
 ///////////////////////////////////////////////////////////////////////////
@@ -306,10 +375,21 @@ function p2StinkOKBtnClick (){
 	restartGame();
 } 
 
+var coopStinkMessage = document.getElementById('coopStinkMessage');
+function coopFiveStinkBugs(){
+	coopStinkMessage.style.display = "block";
+}
+
+var coopStinkOKBtn = document.getElementById('coopStinkOKBtn');
+function coopStinkOKBtnClick (){
+	coopStinkMessage.style.display = "none";
+	restart();
+}
+
 ///////////////////////////////////////////////////////////////////////////
 //All Clear Alert function
 var allClearMessage = document.getElementById('allClearMessage');
-function clearAll3Message(){	
+function clearAllMessage(){	
 	allClearMessage.style.display = "block";
 }
 
