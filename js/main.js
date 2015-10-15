@@ -8,7 +8,6 @@ var boardSize = 16;
 var stinkBugsMaster = "ÖÖÖÖÖ";
 ///////////////////////////////////////////////////////////////////////////
 //Game Start function
-
 var gameStart = document.getElementById("startButton");
 
 gameStart.addEventListener('click', startGame);
@@ -64,7 +63,6 @@ function restartGame(){
 
 ///////////////////////////////////////////////////////////////////////////
 //"How to Play" Button
-
 var howToBtn = document.getElementById('howToButton')
 howToBtn.addEventListener('click', howToPlay);
 var howToMsg = document.getElementById('howToMessage');
@@ -160,9 +158,7 @@ function areAllHidden() {
 			hidden += 1;
 		}
 	} if (hidden === 4) {
-//		alert("Uh-oh, there's no matching bugs for you!  You lose your turn and get a stink bug!");
 		timer = window.setTimeout(addStinkBug, 1250);
-		//noMatch();
 	} 
 	endGame();
 }
@@ -170,7 +166,6 @@ function areAllHidden() {
 var timer;
 ///////////////////////////////////////////////////////////////////////////
 //Stink Bug & No Match Alert function
-
 function addStinkBug(event){
 	if (player1Turn) {
 		if (p1StinkScoreBoard < 3) {	
@@ -242,37 +237,26 @@ function resetMenuStink(){
 
 ///////////////////////////////////////////////////////////////////////////
 //End Game function
-
 function endGame(){
 	if (p1StinkScoreBoard === 3) {
-//		alert("Uh-oh, Player 1 has 3 stink bugs!  Player 2 wins!  The game is over!  Thanks for playing Bugs On A Rug!  Click the 'Start' button to play again!");
 		p1ThreeStinkBugs();
-//		restartGame();
 	} else if (p2StinkScoreBoard === 3) {
-//		alert("Uh-oh, Player 2 has 3 stink bugs!  Player 1 wins!  The game is over!  Thanks for playing Bugs On A Rug!  Click the 'Start' button to play again!");
 		p2ThreeStinkBugs();
-//		restartGame();
 	} else if ((p1ScoreBoard + p2ScoreBoard) === boardSize) {
-//		alert("WOW!  You both cleared the board, good for you!  The game is over!  Thanks for playing Bugs On A Rug!  Click the 'Start' button to play again!");
 		clearAll3Message();
-//		restartGame();
 	} 
 }
-
 
 ///////////////////////////////////////////////////////////////////////////
 //3 Stink Bugs Alert function
 //Player 1 Loses
 var p1StinkMessage = document.getElementById('p1StinkMessage');
-
 function p1ThreeStinkBugs(){	
 	p1StinkMessage.style.display = "block";
 }
 
 var p1StinkOKBtn = document.getElementById('p1StinkOKBtn');
-
 p1StinkOKBtn.addEventListener('click', p1StinkOKBtnClick);
-
 function p1StinkOKBtnClick (){
 	p1StinkMessage.style.display = "none";
 	restartGame();
@@ -280,15 +264,12 @@ function p1StinkOKBtnClick (){
 
 //Player 2 Loses
 var p2StinkMessage = document.getElementById('p2StinkMessage');
-
 function p2ThreeStinkBugs(){	
 	p2StinkMessage.style.display = "block";
 }
 
 var p2StinkOKBtn = document.getElementById('p2StinkOKBtn');
-
 p2StinkOKBtn.addEventListener('click', p2StinkOKBtnClick);
-
 function p2StinkOKBtnClick (){
 	p2StinkMessage.style.display = "none";
 	restartGame();
@@ -296,17 +277,13 @@ function p2StinkOKBtnClick (){
 
 ///////////////////////////////////////////////////////////////////////////
 //All Clear Alert function
-
 var allClearMessage = document.getElementById('allClearMessage');
-
 function clearAll3Message(){	
 	allClearMessage.style.display = "block";
 }
 
 var allClearOKBtn = document.getElementById('allClearOKBtn');
-
 allClearOKBtn.addEventListener('click', allClearOKBtnClick);
-
 function allClearOKBtnClick (){
 	allClearMessage.style.display = "none";
 	restartGame();
