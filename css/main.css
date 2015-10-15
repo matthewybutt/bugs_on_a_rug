@@ -294,6 +294,20 @@ ul {
 	text-align: left;
 }
 
+#startMessage {
+	display: none;
+    position: relative;
+    width: 301px;
+    height: 135px;
+    margin: 0 auto 0;
+    top: -500px;
+    border: double 10px black;
+    border-radius: 30px;
+    background-color: #FFFFE0;
+    padding: 0 10px 10px;
+}
+
+
 #howToMessage {
     display: none;
     position: relative;

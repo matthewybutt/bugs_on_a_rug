@@ -6,11 +6,61 @@ var count = 1;
 var player1Turn = true;
 var boardSize = 16;
 var stinkBugsMaster = "ÖÖÖÖÖ";
+var coopMode = false;
+
+///////////////////////////////////////////////////////////////////////////
+//Restart Game button function
+var restart = document.getElementById("restartButton");
+
+restart.addEventListener('click', restartGame);
+
+function restartGame(){
+   window.location.reload();
+   gameStart();
+}
+
+///////////////////////////////////////////////////////////////////////////
+//"How to Play" Button
+var howToBtn = document.getElementById('howToButton')
+howToBtn.addEventListener('click', howToPlay);
+var howToMsg = document.getElementById('howToMessage');
+function howToPlay(){	
+	howToMsg.style.display = "block";
+}
+
+var howToOKBtn = document.getElementById('howToOKBtn');
+howToOKBtn.addEventListener('click', howToOKBtnClick);
+function howToOKBtnClick (){
+	howToMsg.style.display = "none";
+} 
+
 ///////////////////////////////////////////////////////////////////////////
 //Game Start function
-var gameStart = document.getElementById("startButton");
+//var gameStart = document.getElementById("startButton");
+//gameStart.addEventListener('click', startGame);
 
-gameStart.addEventListener('click', startGame);
+var startBtn = document.getElementById("startButton");
+startBtn.addEventListener('click', chooseStartGame);
+
+var startMessage = document.getElementById("startMessage");
+function chooseStartGame () {
+	startMessage.style.display = "block";
+}
+
+var vsBtn = document.getElementById("vsBtn");
+vsBtn.addEventListener('click', startVS);
+function startVS () {
+	startMessage.style.display = "none";
+	startGame();
+}
+
+var coopBtn = document.getElementById("coopBtn");
+coopBtn.addEventListener('click', startCoop);
+function startCoop () {
+	startMessage.style.display = "none";
+	coopMode = true;
+	startGame();
+}
 
 function startGame(){
 	var redCount = 1;
@@ -56,32 +106,6 @@ function startGame(){
 	colorDisplay.innerHTML = "Click for Color";
 	stinkCountDisplay.innerHTML = "ÖÖÖÖÖ"
 }
-
-///////////////////////////////////////////////////////////////////////////
-//Restart Game button function
-var restart = document.getElementById("restartButton");
-
-restart.addEventListener('click', restartGame);
-
-function restartGame(){
-   window.location.reload();
-   gameStart();
-}
-
-///////////////////////////////////////////////////////////////////////////
-//"How to Play" Button
-var howToBtn = document.getElementById('howToButton')
-howToBtn.addEventListener('click', howToPlay);
-var howToMsg = document.getElementById('howToMessage');
-function howToPlay(){	
-	howToMsg.style.display = "block";
-}
-
-var howToOKBtn = document.getElementById('howToOKBtn');
-howToOKBtn.addEventListener('click', howToOKBtnClick);
-function howToOKBtnClick (){
-	howToMsg.style.display = "none";
-} 
 
 ///////////////////////////////////////////////////////////////////////////
 //"Random Color Selector" Button
