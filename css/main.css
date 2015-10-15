@@ -18,11 +18,46 @@ font-family: 'Short Stack', cursive;
 	font-family: 'Short Stack', cursive;
 }
 
-.titleBanner{
-	font-family: 'Short Stack', cursive;
-	font-weight: bolder;
-	font-size: 30px;
-	}
+.titleBanner {
+    display: inline-block;
+    font-family: 'Short Stack', cursive;
+    font-weight: bolder;
+    font-size: 35px;
+    width: 590px;
+    text-align: center;
+}
+#bannerBug1 {
+	display: inline-block;
+	width: 50px;
+	height: 50px;
+	background-image: url("/images/redbug02.png");
+	background-size: 100%;
+	background-repeat: no-repeat;
+}
+#bannerBug2{
+	display: inline-block;
+	width: 50px;
+	height: 50px;
+	background-image: url("/images/bluebug03.png");
+	background-size: 100%;
+	background-repeat: no-repeat;
+}
+#bannerBug3{
+	display: inline-block;
+	width: 50px;
+	height: 50px;
+	background-image: url("/images/yellowbug03.png");
+	background-size: 100%;
+	background-repeat: no-repeat;
+}
+#bannerBug4{
+	display: inline-block;
+	width: 50px;
+	height: 50px;
+	background-image: url("/images/purplebug04.png");
+	background-size: 100%;
+	background-repeat: no-repeat;
+}
 
 h1 {
 margin: 0px;
