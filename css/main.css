@@ -8,7 +8,7 @@ font-family: 'Short Stack', cursive;
 }
 
 .main {
-	min-width: 768px;
+	min-width: 820px;
 	max-height: auto;
 	margin: auto;
 	position: relative;
@@ -28,7 +28,7 @@ h1 {
 #start {
 	font-family: 'Short Stack', cursive;
 	color: #006400;
-	font-weight: bold;
+	font-weight: bolder;
 	font-size: 30px;
 	display: inline-block;
 	margin-bottom: 10px;
@@ -118,7 +118,7 @@ h1 {
 
 #stinkCount {
 	display: inline-block;
-	border: 3px solid green;
+	border: 3px solid black;
 	border-radius: 30px;
 	text-align: center;
 	vertical-align: center;
@@ -170,8 +170,17 @@ h1 {
 	vertical-align: top;
 }
 
+#containerLeft {
+	margin-right: 25px;
+}
+
+#containerRight {
+	margin-left: 25px;
+}
 .score {
     display: inline-block;
+    font-family: 'Short Stack', cursive;
+	font-weight: bold;
     border-radius: 30px;
     border: 1px solid black;
     height: 50px;
@@ -184,16 +193,11 @@ h1 {
     margin-bottom: 10px;
 }
 
-.player {
-	font-family: 'Short Stack', cursive;
-	font-weight: bold;
-}
-
-.p1 {
+.player1 {
 	background-color: #90EE90;
 }
 
-.p2 {
+.player2 {
 	background-color: #FF8C00;
 }
 
@@ -202,13 +206,6 @@ h1 {
 	font-weight: bold;
 }
 
-#container1 {
-	margin-right: 25px;
-}
-
-#container2 {
-	margin-left: 25px;
-}
 
 /* BOTTOM MENU *****************************************************************/
 
@@ -276,14 +273,14 @@ h4 {
 
 p {
 	font-family: 'Short Stack', cursive;
-	font-size: 14px;
+	font-size: 18px;
 }
 
 #howToMessage {
     display: none;
     position: relative;
     width: 310px;
-    height: 270px;
+    height: 350px;
     margin: 0 auto 0;
     top: -500px;
     border: double 10px black;
@@ -293,49 +290,52 @@ p {
 }
 
 #noMatchMessage {
-	display: none;
+    display: none;
     position: relative;
-    width: 300px;
-    height: 200px;
+    width: 275px;
+    height: 195px;
+    padding: 0 15px;
     margin: 0 auto 0;
-    top: -450px;
-    border: solid 10px black;
+    top: -500px;
+    border: double 10px black;
     border-radius: 30px;
-    background-color: #C0C0C0;
+    background-color: #DCDCDC;
 }
 
 #p1StinkMessage {
-	display: none;
+    display: none;
     position: relative;
-    width: 300px;
-    height: 200px;
+    width: 275px;
+    height: 250px;
+    padding: 0 15px;
     margin: 0 auto 0;
-    top: -450px;
-    border: solid 10px black;
+    top: -500px;
+    border: double 10px black;
     border-radius: 30px;
-    background-color: #C0C0C0;
+    background-color: #FFC145;
 }
 
 #p2StinkMessage {
 	display: none;
     position: relative;
-    width: 300px;
-    height: 200px;
+    width: 275px;
+    height: 250px;
+    padding: 0 15px;
     margin: 0 auto 0;
-    top: -450px;
-    border: solid 10px black;
+    top: -500px;
+    border: double 10px black;
     border-radius: 30px;
-    background-color: #C0C0C0;
+    background-color: #90EE90;
 }
 
-#clearMessage {
+#allClearMessage {
 	display: none;
     position: relative;
     width: 300px;
     height: 200px;
     margin: 0 auto 0;
-    top: -450px;
-    border: solid 10px black;
+    top: -500px;
+    border: double 10px black;
     border-radius: 30px;
-    background-color: #C0C0C0;
+    background-color: #FFFFE0;
 }

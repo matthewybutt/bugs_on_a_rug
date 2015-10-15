@@ -256,7 +256,7 @@ function noMatchOKBtnClick (){
 		p1BugBox.innerHTML += "Ö";
 		stinkCount.innerHTML = stinkBugsMaster;
 		p1StinkScoreBoard += 1;
-		stinkScore1.innerHTML = p1StinkScoreBoard;
+//		stinkScore1.innerHTML = p1StinkScoreBoard;
 		stinkCounter -= 1;
 //		for (var i = 0; i < stinkCounter; i++){
 //			stinkCount.innerHTML = stinkBugsMaster.slice(0, -i);
@@ -275,7 +275,7 @@ function noMatchOKBtnClick (){
 		p2BugBox.innerHTML += "Ö";
 		stinkCount.innerHTML = stinkBugsMaster;
 		p2StinkScoreBoard += 1;
-		stinkScore2.innerHTML = p2StinkScoreBoard;
+//		stinkScore2.innerHTML = p2StinkScoreBoard;
 		stinkCounter -= 1;
 //		for (var i = 0; i < stinkCounter; i++){
 //			stinkCount.innerHTML = stinkBugsMaster.slice(0, -i);
@@ -355,18 +355,18 @@ function p2StinkOKBtnClick (){
 ///////////////////////////////////////////////////////////////////////////
 //All Clear Alert function
 
-var clearMessage = document.getElementById('clearMessage');
+var allClearMessage = document.getElementById('allClearMessage');
 
 function clearAll3Message(){	
-	clearMessage.style.display = "block";
+	allClearMessage.style.display = "block";
 }
 
-var clearOKBtn = document.getElementById('clearOKBtn');
+var allClearOKBtn = document.getElementById('allClearOKBtn');
 
-clearOKBtn.addEventListener('click', clearOKBtnClick);
+allClearOKBtn.addEventListener('click', allClearOKBtnClick);
 
-function clearOKBtnClick (){
-	clearMessage.style.display = "none";
+function allClearOKBtnClick (){
+	allClearMessage.style.display = "none";
 	restartGame();
 } 
 
