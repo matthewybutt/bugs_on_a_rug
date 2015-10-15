@@ -167,6 +167,8 @@ margin: 0px;
 	font-weight: bolder;
 }
 
+
+
 /* BOARD CONTAINERS *****************************************************************/
 
 #innerContainer {
@@ -297,14 +299,22 @@ ul {
 #startMessage {
 	display: none;
     position: relative;
-    width: 301px;
-    height: 135px;
+    width: 300px;
+    height: 315px;
     margin: 0 auto 0;
     top: -500px;
     border: double 10px black;
     border-radius: 30px;
     background-color: #FFFFE0;
-    padding: 0 10px 10px;
+    padding: 0 10px;
+}
+
+#coopBtn {
+	margin-right: 15px;
+}
+
+#vsBtn {
+	margin-left: 15px;
 }
 
 
@@ -312,7 +322,7 @@ ul {
     display: none;
     position: relative;
     width: 340px;
-    height: 355px;
+    height: 370px;
     margin: 0 auto 0;
     top: -500px;
     border: double 10px black;
@@ -329,7 +339,7 @@ ul {
     display: none;
     position: relative;
     width: 275px;
-    height: 195px;
+    height: 210px;
     padding: 0 15px;
     margin: 0 auto 0;
     top: -500px;
@@ -368,7 +378,7 @@ ul {
 	display: none;
     position: relative;
     width: 275px;
-    height: 265px;
+    height: 275px;
     padding: 0 15px;
     margin: 0 auto 0;
     top: -500px;

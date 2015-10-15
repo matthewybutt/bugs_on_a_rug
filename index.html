@@ -31,7 +31,7 @@
 				<div class="topMenu" id="playerTurnDisplay">Ö Ö Ö Ö Ö</div>
 				<div class="topMenu" id="colorDisplay">Ö Ö Ö Ö Ö</div>
 				<div class="topMenu" id="stinkCountDisplay">Ö Ö Ö Ö Ö</div>
-				</div>
+			</div>	
 		</div>
 		
 		<br>
@@ -82,21 +82,23 @@
 <!-- POP UP MESSAGES -->
 
 		<div id="startMessage">
-			<h3> <u> Welcome! </u> </h3>
-			<p>Please choose a game mode.
-			<br>
-			<br>
+			<h2> <u> Welcome! </u> </h2>
+			<p>Please choose a game mode:</p>
+			<ul>
+				<li>Co-Op: Play together and try to clear the whole board before you get 5 stink bugs.</li>
+				<li>Versus: Play against each other to clear the bugs.  If you get 3 stink bugs you lose!</li>
+			</ul>
 			<button id="coopBtn">Co-Op</button>
 			<button id="vsBtn">Versus</button>
 		</div>
 
 		<div id="howToMessage">
-			<h3> <u> How to Play </u> </h3>
+			<h2> <u> How to Play </u> </h2>
 			<b>Bugs On A Rug</b> is a matching game where players try and clear the bugs off of the rug!<br>
 			<ul>
-			<li>To start click the "Start" button.</li>
+			<li>Click the "Start" button.</li>
 			<li>On your turn click the <b>"Click for Color"</b> button and match it to the color of a bug on the rug to clear it.</li>
-			<li>If you can't make a match you get a stink bug, collect 3 stink bugs and you lose!</li>
+			<li>If you can't make a match you get a stink bug, collect too many stink bugs and you lose!</li>
 			</ul>
 			Good luck and have fun!
 			<br>
@@ -104,36 +106,36 @@
 		</div>
 
 		<div id="noMatchMessage">
-			<h3> <u> No Match! </u> </h3>
+			<h2> <u> No Match! </u> </h2>
 			<p>Uh-oh, there are no matching bugs for you!<br>You lose your turn and get a stink bug! YUCKY!</p>
 			<button id="noMatchOKBtn">OK</button>
 		</div>
 
 		<div id="p1StinkMessage">
-			<h3> <u>Player 2 Wins!</u> </h3>
+			<h2> <u>Player 2 Wins!</u> </h2>
 			<h4>Game Over!</h4>
 			<p>Oh no, Player 1 has 3 stink bugs!<br>Thanks for playing<br><b>Bugs On A Rug!</b></p>
 			<button id="p1StinkOKBtn">OK</button>
 		</div>
 
 		<div id="p2StinkMessage">
-			<h3> <u>Player 1 Wins!</u> </h3>
+			<h2> <u>Player 1 Wins!</u> </h2>
 			<h4>Game Over!</h4>
 			<p>Oh no, Player 2 has 3 stink bugs!<br>Thanks for playing<br><b>Bugs On A Rug!</b></p>
 			<button id="p2StinkOKBtn">OK</button>
 		</div>
 
 		<div id="coopStinkMessage">
-			<h3> <u>Game Over!</u> </h3>
+			<h2> <u>Game Over!</u> </h2>
 			<h4>YUCKY!</h4>
 			<p>Oh no, you got 5 stink bugs before the board was cleared!<br>Thanks for playing<br><b>Bugs On A Rug!</b></p>
 			<button id="coopStinkOKBtn">OK</button>
 		</div>
 
 		<div id="allClearMessage">
-			<h3> <u>You Win!</u> </h3>
+			<h2> <u>You Win!</u> </h2>
 			<h4>Game Over!</h4>
-			<p>WOW!  You cleared all the bugs.<br>Good for you!<br>Thanks for playing<br><b>Bugs On A Rug!</b></p>
+			<p>WOW!<br>You cleared all the bugs.<br>Good for you!<br>Thanks for playing<br><b>Bugs On A Rug!</b></p>
 			<button id="allClearOKBtn">OK</button>
 		</div>
 </div>

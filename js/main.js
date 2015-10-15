@@ -35,10 +35,7 @@ function howToOKBtnClick (){
 } 
 
 ///////////////////////////////////////////////////////////////////////////
-//Game Start function
-//var gameStart = document.getElementById("startButton");
-//gameStart.addEventListener('click', startGame);
-
+//Game Start Button functions
 var startBtn = document.getElementById("startButton");
 startBtn.addEventListener('click', chooseStartGame);
 
@@ -55,13 +52,17 @@ function startVS () {
 }
 
 var coopBtn = document.getElementById("coopBtn");
+var containerRight = document.getElementById("containerRight");
 coopBtn.addEventListener('click', startCoop);
 function startCoop () {
 	startMessage.style.display = "none";
+	containerRight.style.visibility = "hidden";
 	coopMode = true;
 	startGame();
 }
 
+///////////////////////////////////////////////////////////////////////////
+//Game Start function
 function startGame(){
 	var redCount = 1;
 	var blueCount = 1;
@@ -104,7 +105,7 @@ function startGame(){
 	playerTurnDisplay.style.backgroundColor = "#90EE90";
 	colorDisplayValue = "";
 	colorDisplay.innerHTML = "Click for Color";
-	stinkCountDisplay.innerHTML = "ÖÖÖÖÖ"
+	//stinkCountDisplay.innerHTML = "ÖÖÖÖÖ"
 }
 
 ///////////////////////////////////////////////////////////////////////////
@@ -208,7 +209,7 @@ function areAllHidden() {
 
 var timer;
 ///////////////////////////////////////////////////////////////////////////
-//Stink Bug & No Match Alert function
+//Add Stink Bug function
 function addStinkBug(event){
 	if (coopMode === false) {	
 		if (player1Turn) {
@@ -237,6 +238,8 @@ var stinkCounter = 5;
 var p1StinkScoreBoard = 0;
 var p2StinkScoreBoard = 0;
 
+///////////////////////////////////////////////////////////////////////////
+//No Match Alert and Add Stink Bug function
 var noMatchMessage = document.getElementById('noMatchMessage');
 function noMatch(){	
 	noMatchMessage.style.display = "block";
@@ -244,39 +247,7 @@ function noMatch(){
 
 var noMatchOKBtn = document.getElementById('noMatchOKBtn');
 noMatchOKBtn.addEventListener('click', noMatchOKBtnClick);
-/*function noMatchOKBtnClick (){
-	if (player1Turn) {
-		p1BugBox.innerHTML += "Ö";
-		p1StinkScoreBoard += 1;
-		if (coopMode = false) {
-			player1Turn = false;
-			playerTurnDisplay.innerHTML = "Player 2";
-			playerTurnDisplay.style.backgroundColor = "#FF8C00";
-		}
-		resetMenuStink();
-		if (p1StinkScoreBoard === 3) {
-			endGame();
-		}
-	} else {
-		p2BugBox.innerHTML += "Ö";
-		p2StinkScoreBoard += 1;
-		player1Turn = true;
-		playerTurnDisplay.innerHTML = "Player 1";
-		playerTurnDisplay.style.backgroundColor = "#90EE90";
-		resetMenuStink();
-		if (p2StinkScoreBoard === 3) {
-			endGame();
-		}
-	}
-		for (var i = 5; i > stinkCounter ; i--){
-			if (stinkCounter != 0) {
-				stinkCountDisplay.innerHTML = Array(i).join("Ö");
-			} else {
-				stinkCountDisplay.innerHTML = "All Gone!";
-			}
-	}
-	noMatchMessage.style.display = "none";
-} */
+
 function noMatchOKBtnClick (){
 	if (coopMode === false) {
 		if (player1Turn) {
@@ -336,7 +307,7 @@ function endGame(){
 		} else if (p2StinkScoreBoard === 3) {
 			p2ThreeStinkBugs();
 		} else if ((p1ScoreBoard + p2ScoreBoard) === boardSize) {
-			clearAll3Message();
+			clearAllMessage();
 		} 
 	} else {
 		if (p1StinkScoreBoard === 5) {
@@ -348,7 +319,7 @@ function endGame(){
 }
 
 ///////////////////////////////////////////////////////////////////////////
-//3 Stink Bugs Alert function
+//Maximum Stink Bugs Allowed Alert function
 //Player 1 Loses
 var p1StinkMessage = document.getElementById('p1StinkMessage');
 function p1ThreeStinkBugs(){	
@@ -375,19 +346,21 @@ function p2StinkOKBtnClick (){
 	restartGame();
 } 
 
+//Co-op Loses
 var coopStinkMessage = document.getElementById('coopStinkMessage');
 function coopFiveStinkBugs(){
 	coopStinkMessage.style.display = "block";
 }
 
 var coopStinkOKBtn = document.getElementById('coopStinkOKBtn');
+coopStinkOKBtn.addEventListener('click', coopStinkOKBtnClick);
 function coopStinkOKBtnClick (){
 	coopStinkMessage.style.display = "none";
-	restart();
+	restartGame();
 }
 
 ///////////////////////////////////////////////////////////////////////////
-//All Clear Alert function
+//Board All Clear Alert function
 var allClearMessage = document.getElementById('allClearMessage');
 function clearAllMessage(){	
 	allClearMessage.style.display = "block";
