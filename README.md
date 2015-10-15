@@ -19,7 +19,7 @@ Bugs On A Rug is a matching game where players try and clear the bugs off of the
 * [ ] As a player I want a variety of skill levels to change the level of difficulty
 * [x] As a player I want a game that is easy to understand what the goal is
 * [x] As a player I want to play a game I can play with my kid(s)
-* [x]As a player I want little to no interruptions during game play
+* [x] As a player I want little to no interruptions during game play
 * [x] As a player I want to be able to start a new game as soon as my current game is finished
 * [x] As a player I don't want to use a complex keyboard/mouse configuration to play
 

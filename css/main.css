@@ -5,6 +5,8 @@ font-family: 'Short Stack', cursive;
 
 .body {
 	background-color: #A4E3FF;
+	background-size: 100%;
+	background-repeat: repeat;
 }
 
 .main {
@@ -45,7 +47,7 @@ h1 {
 #topOfBoard {
 	display: inline-block;
 	border: 5px dotted black;
-	background: rgba(255,255,255,.7);
+	background: rgba(255,255,255,.8);
 	border-radius: 30px;
 	width: 500px;
 	height: 90px;
@@ -150,6 +152,7 @@ h1 {
 .cells {
 	border-radius: 50%;
 	display: inline-block;
+	background-size: contain;
 /*	border: 1px solid black; */
 	height: 100px;
 	width: 100px;
@@ -162,12 +165,16 @@ h1 {
 /* PLAYER CONTAINERS *****************************************************************/
 
 .container {
-	display: inline-block;
-	height: auto;
-	width: 110px;
-	position: relative;
-	text-align: center;
-	vertical-align: top;
+    display: inline-block;
+    background: rgba(255,255,255,.8);
+	border: 5px dotted black;
+    border-radius: 30px;
+    height: auto;
+    width: 131px;
+    position: relative;
+    text-align: center;
+    vertical-align: top;
+    padding-top: 15px;
 }
 
 #containerLeft {

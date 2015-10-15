@@ -23,6 +23,7 @@ function startGame(){
         case 15:
           rugBoard[i].data = "red";
           rugBoard[i].style.backgroundColor = "red";
+          rugBoard[i].style.backgroundImage = "url(./images/redbug01.png)";
           break;
        case 1:
        case 6:
@@ -30,6 +31,7 @@ function startGame(){
        case 12:
           rugBoard[i].data = "blue";
           rugBoard[i].style.backgroundColor = "blue";
+          rugBoard[i].style.backgroundImage = "url(./images/bluebug01.png)"
           break;
        case 2:
        case 7:
@@ -37,10 +39,12 @@ function startGame(){
        case 13:
           rugBoard[i].data = "yellow";
           rugBoard[i].style.backgroundColor = "yellow";
+          rugBoard[i].style.backgroundImage = "url(./images/yellowbug01.png)"
           break;
         default:
           rugBoard[i].data = "purple";
           rugBoard[i].style.backgroundColor = "purple";
+          rugBoard[i].style.backgroundImage = "url(./images/purplebug01.png)"
       }
   }
 	playerTurnDisplay.innerHTML = "Player 1";
