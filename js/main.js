@@ -5,7 +5,6 @@ var colorDisplayValue = "";
 var count = 1;
 var player1Turn = true;
 var boardSize = 16;
-var stinkBugs = 5;
 var stinkBugsMaster = "ÖÖÖÖÖ";
 ///////////////////////////////////////////////////////////////////////////
 //Game Start function
@@ -83,20 +82,19 @@ function howToOKBtnClick (){
 //"Random Color Selector" Button
 var randomColorSelect = function() {
     var num = Math.random();
-    console.log(num);
-    if (num > 0.75) {
+    if (num < 0.25) {
         colorDisplayValue = "red";
         colorDisplay.innerHTML = "Red";
         colorDisplay.className = 'topMenu red';
         areAllHidden();
         return;
-    } else if (num < 0.25) {
+    } else if ((num > 0.25) && (num < 0.5)){
         colorDisplayValue = "blue";
         colorDisplay.innerHTML = "Blue";
         colorDisplay.className = 'topMenu blue';
          areAllHidden();
          return;
-    } else if ((num > 0.25) && (num < 0.5)) {
+    } else if (num > 0.75) {
         colorDisplayValue = "yellow";
         colorDisplay.innerHTML = "Yellow";
         colorDisplay.className = 'topMenu yellow';
@@ -125,7 +123,7 @@ var clickCell = function(event) {
 			this.style.visibility = "hidden";
 			playerTurnDisplay.innerHTML = "Player 2";
 			playerTurnDisplay.style.backgroundColor = "#FF8C00";
-			menuReset();
+			resetMenuMatch();
 		} 
 	} else {
 		if (this.data === colorDisplayValue) {
@@ -135,7 +133,7 @@ var clickCell = function(event) {
 			this.style.visibility = "hidden";
 			playerTurnDisplay.innerHTML = "Player 1";
 			playerTurnDisplay.style.backgroundColor = "#90EE90";
-			menuReset();
+			resetMenuMatch();
 		} 
 	} endGame();
 }
@@ -146,7 +144,7 @@ var p1Score = document.getElementById('p1ScoreBox');
 var p2Score = document.getElementById('p2ScoreBox');
 var playerTurnDisplay = document.getElementById('playerTurnDisplay');
 
-function menuReset(){
+function resetMenuMatch(){
 	colorDisplayValue = "";
 	colorDisplay.innerHTML = "Click for Color";
 	colorDisplay.className = colorDisplay.className.substring(0, colorDisplay.className.indexOf(' '));
@@ -163,7 +161,7 @@ function areAllHidden() {
 		}
 	} if (hidden === 4) {
 //		alert("Uh-oh, there's no matching bugs for you!  You lose your turn and get a stink bug!");
-		timer = window.setTimeout(addStinkBug, 1500);
+		timer = window.setTimeout(addStinkBug, 1250);
 		//noMatch();
 	} 
 	endGame();
@@ -171,40 +169,16 @@ function areAllHidden() {
 
 var timer;
 ///////////////////////////////////////////////////////////////////////////
-//Stink Bugs function
+//Stink Bug & No Match Alert function
 
 function addStinkBug(event){
 	if (player1Turn) {
-//		p1StinkScoreBoard += 1;
-//		stinkScore1.innerHTML = p1StinkScoreBoard;
-//		stinkCounter -= 1;
-//		stinkCount.innerHTML = stinkCounter;
-//		player1Turn = false;
-//		playerTurn.innerHTML = "Player 2";
-//		colorDisplayValue = "";
-//		colorDisplay.innerHTML = "Click for Color";
-//		colorDisplay.className = colorDisplay.className.substring(0, colorDisplay.className.indexOf(' '));
-		//colorDisplay.style.backgroundColor = ""
 		if (p1StinkScoreBoard < 3) {	
-//		timer = window.setTimeout(noMatch, 1500);
 			noMatch();			
-//			alert("Uh-oh, Player 1 has 3 stink bugs!  Player 1 loses!");
 		}
 	} else {
-//		p2StinkScoreBoard += 1;
-//		stinkScore2.innerHTML = p2StinkScoreBoard;
-//		stinkCounter -= 1;
-//		stinkCount.innerHTML = stinkCounter;
-//		player1Turn = true;
-//		playerTurn.innerHTML = "Player 1";
-//		colorDisplayValue = "";
-//		colorDisplay.innerHTML = "Click for Color";
-//		colorDisplay.className = colorDisplay.className.substring(0, colorDisplay.className.indexOf(' '));
-		//colorDisplay.style.backgroundColor = ""
 		if (p2StinkScoreBoard < 3) {
-//		timer = window.setTimeout(noMatch, 1500);
 			noMatch();
-//			alert("Uh-oh, Player 2 has 3 stink bugs!  Player 2 loses!");
 		}
 	}
 }
@@ -219,56 +193,31 @@ var stinkCounter = 5;
 var p1StinkScoreBoard = 0;
 var p2StinkScoreBoard = 0;
 
-//stinkBugs.addEventListener('click', addStinkBug)
-
-///////////////////////////////////////////////////////////////////////////
-//Stink Bug-No Match Alert function
 var noMatchMessage = document.getElementById('noMatchMessage');
-
 function noMatch(){	
 	noMatchMessage.style.display = "block";
 }
 
 var noMatchOKBtn = document.getElementById('noMatchOKBtn');
-
 noMatchOKBtn.addEventListener('click', noMatchOKBtnClick);
-
 function noMatchOKBtnClick (){
 	if (player1Turn) {
 		p1BugBox.innerHTML += "Ö";
-		stinkCountDisplay.innerHTML = stinkBugsMaster;
 		p1StinkScoreBoard += 1;
-//		stinkScore1.innerHTML = p1StinkScoreBoard;
-		stinkCounter -= 1;
-//		for (var i = 0; i < stinkCounter; i++){
-//			stinkCount.innerHTML = stinkBugsMaster.slice(0, -i);
-//		}
-//		stinkCount.innerHTML = stinkCounter;
 		player1Turn = false;
 		playerTurnDisplay.innerHTML = "Player 2";
 		playerTurnDisplay.style.backgroundColor = "#FF8C00";
-		colorDisplayValue = "";
-		colorDisplay.innerHTML = "Click for Color";
-		colorDisplay.className = colorDisplay.className.substring(0, colorDisplay.className.indexOf(' '));
+		resetMenuStink();
 		if (p1StinkScoreBoard === 3) {
 			endGame();
 		}
 	} else {
 		p2BugBox.innerHTML += "Ö";
-		stinkCountDisplay.innerHTML = stinkBugsMaster;
 		p2StinkScoreBoard += 1;
-//		stinkScore2.innerHTML = p2StinkScoreBoard;
-		stinkCounter -= 1;
-//		for (var i = 0; i < stinkCounter; i++){
-//			stinkCount.innerHTML = stinkBugsMaster.slice(0, -i);
-//		}
-//		stinkCount.innerHTML = stinkCounter;
 		player1Turn = true;
 		playerTurnDisplay.innerHTML = "Player 1";
 		playerTurnDisplay.style.backgroundColor = "#90EE90";
-		colorDisplayValue = "";
-		colorDisplay.innerHTML = "Click for Color";
-		colorDisplay.className = colorDisplay.className.substring(0, colorDisplay.className.indexOf(' '));
+		resetMenuStink();
 		if (p2StinkScoreBoard === 3) {
 			endGame();
 		}
@@ -283,7 +232,14 @@ function noMatchOKBtnClick (){
 	noMatchMessage.style.display = "none";
 } 
 
-var bugChar = "Ö"
+function resetMenuStink(){
+	stinkCountDisplay.innerHTML = stinkBugsMaster;
+	stinkCounter -= 1;
+	colorDisplayValue = "";
+	colorDisplay.innerHTML = "Click for Color";
+	colorDisplay.className = colorDisplay.className.substring(0, colorDisplay.className.indexOf(' '));
+}
+
 ///////////////////////////////////////////////////////////////////////////
 //End Game function
 
