@@ -86,7 +86,7 @@ h1 {
 	vertical-align: center;
 }
 
-#playerTurn {
+#playerTurnDisplay {
 	display: inline-block;
 	border: 3px solid black;
 	border-radius: 30px;
@@ -116,7 +116,7 @@ h1 {
 	vertical-align: center;
 }
 
-#stinkCount {
+#stinkCountDisplay {
 	display: inline-block;
 	border: 3px solid black;
 	border-radius: 30px;
@@ -209,7 +209,7 @@ h1 {
 
 /* BOTTOM MENU *****************************************************************/
 
-#howTo {
+#howToButton {
 	display: inline-block;
 	font-family: 'Short Stack', cursive;
 	color: #8B0000;
@@ -332,7 +332,7 @@ p {
 	display: none;
     position: relative;
     width: 300px;
-    height: 200px;
+    height: 270px;
     margin: 0 auto 0;
     top: -500px;
     border: double 10px black;

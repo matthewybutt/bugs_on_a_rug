@@ -9,6 +9,7 @@ var stinkBugs = 5;
 var stinkBugsMaster = "ÖÖÖÖÖ";
 ///////////////////////////////////////////////////////////////////////////
 //Game Start function
+
 var gameStart = document.getElementById("startButton");
 
 gameStart.addEventListener('click', startGame);
@@ -17,25 +18,38 @@ function startGame(){
 	for (var i = 0; i < boardSize; i++ ) { 
 		rugBoard[i] = document.getElementById('bug' + count++); 
 		rugBoard[i].addEventListener('click', clickCell);
-		if ((i === 0) || (i === 5) || (i === 10) || (i === 15)) {
-			rugBoard[i].data = "red";
-			rugBoard[i].style.backgroundColor = "red";
-		} else if ((i === 1) || (i === 6) || (i === 11) || (i === 12)) {
-			rugBoard[i].data = "blue";
-			rugBoard[i].style.backgroundColor = "blue";
-		} else if ((i === 2) || (i === 7) || (i === 8) || (i === 13)) {
-			rugBoard[i].data = "yellow";
-			rugBoard[i].style.backgroundColor = "yellow";
-		} else {
-			rugBoard[i].data = "purple";
-			rugBoard[i].style.backgroundColor = "purple";
-		}
-	} 
-	playerTurn.innerHTML = "Player 1";
-	playerTurn.style.backgroundColor = "#90EE90";
+      switch (i){
+        case 0:
+        case 5:
+        case 10:
+        case 15:
+          rugBoard[i].data = "red";
+          rugBoard[i].style.backgroundColor = "red";
+          break;
+       case 1:
+       case 6:
+       case 11:
+       case 12:
+          rugBoard[i].data = "blue";
+          rugBoard[i].style.backgroundColor = "blue";
+          break;
+       case 2:
+       case 7:
+       case 8:
+       case 13:
+          rugBoard[i].data = "yellow";
+          rugBoard[i].style.backgroundColor = "yellow";
+          break;
+        default:
+          rugBoard[i].data = "purple";
+          rugBoard[i].style.backgroundColor = "purple";
+      }
+  }
+	playerTurnDisplay.innerHTML = "Player 1";
+	playerTurnDisplay.style.backgroundColor = "#90EE90";
 	colorDisplayValue = "";
 	colorDisplay.innerHTML = "Click for Color";
-	stinkCount.innerHTML = "ÖÖÖÖÖ";
+	stinkCountDisplay.innerHTML = "ÖÖÖÖÖ"
 }
 
 ///////////////////////////////////////////////////////////////////////////
@@ -51,72 +65,54 @@ function restartGame(){
 
 ///////////////////////////////////////////////////////////////////////////
 //"How to Play" Button
-//var howTo = document.getElementById("howTo")
 
-//howTo.addEventListener('click', howToPlay);
-
-//function howToPlay (){
-//	alert("Bugs On A Rug is a matching game where players try and clear the bugs off of the rug! On your turn click the color selector button and match the color of the bug given to you to clear it off the rug. If you can't make a match you get a stink bug, collect 3 stink bugs and you lose!");
-//}
+var howToBtn = document.getElementById('howToButton')
+howToBtn.addEventListener('click', howToPlay);
 var howToMsg = document.getElementById('howToMessage');
-
-howTo.addEventListener('click', howToPlay);
-
 function howToPlay(){	
 	howToMsg.style.display = "block";
 }
 
 var howToOKBtn = document.getElementById('howToOKBtn');
-
 howToOKBtn.addEventListener('click', howToOKBtnClick);
-
 function howToOKBtnClick (){
 	howToMsg.style.display = "none";
 } 
 
 ///////////////////////////////////////////////////////////////////////////
 //"Random Color Selector" Button
-var rng = function() {
-    var color = "";
+var randomColorSelect = function() {
     var num = Math.random();
     console.log(num);
     if (num > 0.75) {
-        console.log("red");
         colorDisplayValue = "red";
         colorDisplay.innerHTML = "Red";
         colorDisplay.className = 'topMenu red';
         areAllHidden();
         return;
     } else if (num < 0.25) {
-        console.log("blue");
         colorDisplayValue = "blue";
         colorDisplay.innerHTML = "Blue";
         colorDisplay.className = 'topMenu blue';
          areAllHidden();
          return;
     } else if ((num > 0.25) && (num < 0.5)) {
-        console.log("yellow");
         colorDisplayValue = "yellow";
         colorDisplay.innerHTML = "Yellow";
         colorDisplay.className = 'topMenu yellow';
         areAllHidden();
         return;
     } else {
-        console.log("purple");
         colorDisplayValue = "purple";
         colorDisplay.innerHTML = "Purple";
-        console.log(colorDisplay.className)
         colorDisplay.className = 'topMenu purple';
         areAllHidden();
         return;
         }
 }
 
-//var colorSelect = document.getElementById("rcs");
 var colorDisplay = document.getElementById("colorDisplay");
-
-//colorSelect.addEventListener('click', rng);
-colorDisplay.addEventListener('click', rng);
+colorDisplay.addEventListener('click', randomColorSelect);
 
 ///////////////////////////////////////////////////////////////////////////
 //Matching Bugs & Score Keepeing function
@@ -128,8 +124,8 @@ var clickCell = function(event) {
 			p1Score.innerHTML = p1ScoreBoard;
 			this.style.visibility = "hidden";
 			player1Turn = false;
-			playerTurn.innerHTML = "Player 2";
-			playerTurn.style.backgroundColor = "#FF8C00";
+			playerTurnDisplay.innerHTML = "Player 2";
+			playerTurnDisplay.style.backgroundColor = "#FF8C00";
 			colorDisplayValue = "";
 			colorDisplay.innerHTML = "Click for Color";
 			// colorDisplay.style.backgroundColor = "";
@@ -147,8 +143,8 @@ var clickCell = function(event) {
 			p2Score.innerHTML = p2ScoreBoard;
 			this.style.visibility = "hidden";
 			player1Turn = true;
-			playerTurn.innerHTML = "Player 1";
-			playerTurn.style.backgroundColor = "#90EE90";
+			playerTurnDisplay.innerHTML = "Player 1";
+			playerTurnDisplay.style.backgroundColor = "#90EE90";
 			colorDisplayValue = ""
 			colorDisplay.innerHTML = "Click for Color";
 			console.log(colorDisplay.className);
@@ -164,9 +160,9 @@ var clickCell = function(event) {
 
 var p1ScoreBoard = 0;
 var p2ScoreBoard = 0;
-var p1Score = document.getElementById('score1');
-var p2Score = document.getElementById('score2');
-var playerTurn = document.getElementById('playerTurn');
+var p1Score = document.getElementById('p1ScoreBox');
+var p2Score = document.getElementById('p2ScoreBox');
+var playerTurnDisplay = document.getElementById('playerTurnDisplay');
 
 
 ///////////////////////////////////////////////////////////////////////////
@@ -229,7 +225,7 @@ function addStinkBug(event){
 var stinkBugs = document.getElementById('stink');
 var stinkScore1 = document.getElementById('stinkScore1');
 var stinkScore2 = document.getElementById('stinkScore2');
-var stinkCount = document.getElementById('stinkCount');
+var stinkCountDisplay = document.getElementById('stinkCountDisplay');
 var p1BugBox = document.getElementById('p1BugBox');
 var p2BugBox = document.getElementById('p2BugBox');
 var stinkCounter = 5;
@@ -253,7 +249,7 @@ noMatchOKBtn.addEventListener('click', noMatchOKBtnClick);
 function noMatchOKBtnClick (){
 	if (player1Turn) {
 		p1BugBox.innerHTML += "Ö";
-		stinkCount.innerHTML = stinkBugsMaster;
+		stinkCountDisplay.innerHTML = stinkBugsMaster;
 		p1StinkScoreBoard += 1;
 //		stinkScore1.innerHTML = p1StinkScoreBoard;
 		stinkCounter -= 1;
@@ -262,8 +258,8 @@ function noMatchOKBtnClick (){
 //		}
 //		stinkCount.innerHTML = stinkCounter;
 		player1Turn = false;
-		playerTurn.innerHTML = "Player 2";
-		playerTurn.style.backgroundColor = "#FF8C00";
+		playerTurnDisplay.innerHTML = "Player 2";
+		playerTurnDisplay.style.backgroundColor = "#FF8C00";
 		colorDisplayValue = "";
 		colorDisplay.innerHTML = "Click for Color";
 		colorDisplay.className = colorDisplay.className.substring(0, colorDisplay.className.indexOf(' '));
@@ -272,7 +268,7 @@ function noMatchOKBtnClick (){
 		}
 	} else {
 		p2BugBox.innerHTML += "Ö";
-		stinkCount.innerHTML = stinkBugsMaster;
+		stinkCountDisplay.innerHTML = stinkBugsMaster;
 		p2StinkScoreBoard += 1;
 //		stinkScore2.innerHTML = p2StinkScoreBoard;
 		stinkCounter -= 1;
@@ -281,8 +277,8 @@ function noMatchOKBtnClick (){
 //		}
 //		stinkCount.innerHTML = stinkCounter;
 		player1Turn = true;
-		playerTurn.innerHTML = "Player 1";
-		playerTurn.style.backgroundColor = "#90EE90";
+		playerTurnDisplay.innerHTML = "Player 1";
+		playerTurnDisplay.style.backgroundColor = "#90EE90";
 		colorDisplayValue = "";
 		colorDisplay.innerHTML = "Click for Color";
 		colorDisplay.className = colorDisplay.className.substring(0, colorDisplay.className.indexOf(' '));
@@ -292,9 +288,9 @@ function noMatchOKBtnClick (){
 	}
 		for (var i = 5; i > stinkCounter ; i--){
 			if (stinkCounter != 0) {
-				stinkCount.innerHTML = Array(i).join("Ö");
+				stinkCountDisplay.innerHTML = Array(i).join("Ö");
 			} else {
-				stinkCount.innerHTML = "All Gone!";
+				stinkCountDisplay.innerHTML = "All Gone!";
 			}
 	}
 	noMatchMessage.style.display = "none";
@@ -373,7 +369,40 @@ function allClearOKBtnClick (){
 	restartGame();
 } 
 
-
+///////////////////////////////////////////////////////////////////////////
+///////////////////////CODE THAT HAS BEEN REFACTORED///////////////////////
+///////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////
+//FORMER Game Start function (refactored 2015-10-14, 18:25)
+//
+//var gameStart = document.getElementById("startButton");
+//
+//gameStart.addEventListener('click', startGame);
+//
+//function startGame(){
+//	for (var i = 0; i < boardSize; i++ ) { 
+//		rugBoard[i] = document.getElementById('bug' + count++); 
+//		rugBoard[i].addEventListener('click', clickCell);
+//		if ((i === 0) || (i === 5) || (i === 10) || (i === 15)) {
+//			rugBoard[i].data = "red";
+//			rugBoard[i].style.backgroundColor = "red";
+//		} else if ((i === 1) || (i === 6) || (i === 11) || (i === 12)) {
+//			rugBoard[i].data = "blue";
+//			rugBoard[i].style.backgroundColor = "blue";
+//		} else if ((i === 2) || (i === 7) || (i === 8) || (i === 13)) {
+//			rugBoard[i].data = "yellow";
+//			rugBoard[i].style.backgroundColor = "yellow";
+//		} else {
+//			rugBoard[i].data = "purple";
+//			rugBoard[i].style.backgroundColor = "purple";
+//		}
+//	} 
+//	playerTurn.innerHTML = "Player 1";
+//	playerTurn.style.backgroundColor = "#90EE90";
+//	colorDisplayValue = "";
+//	colorDisplay.innerHTML = "Click for Color";
+//	stinkCount.innerHTML = "ÖÖÖÖÖ";
+//}
 
 /*
 1. When the page loads-
