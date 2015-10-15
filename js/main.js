@@ -115,46 +115,28 @@ var colorDisplay = document.getElementById("colorDisplay");
 colorDisplay.addEventListener('click', randomColorSelect);
 
 ///////////////////////////////////////////////////////////////////////////
-//Matching Bugs & Score Keepeing function
+//Matching Bugs & Score Keeping function
 var clickCell = function(event) {
 	if (player1Turn) {
 		if (this.data === colorDisplayValue) {
-			console.log("match");
 			p1ScoreBoard += 1;
 			p1Score.innerHTML = p1ScoreBoard;
-			this.style.visibility = "hidden";
 			player1Turn = false;
+			this.style.visibility = "hidden";
 			playerTurnDisplay.innerHTML = "Player 2";
 			playerTurnDisplay.style.backgroundColor = "#FF8C00";
-			colorDisplayValue = "";
-			colorDisplay.innerHTML = "Click for Color";
-			// colorDisplay.style.backgroundColor = "";
-			console.log(colorDisplay.className)
-			colorDisplay.className = colorDisplay.className.substring(0, colorDisplay.className.indexOf(' '));
-			console.log(colorDisplay.className);
-		} else {
-			console.log("no match");
-	//		alert("Sorry, not a match!");
-		}
+			menuReset();
+		} 
 	} else {
 		if (this.data === colorDisplayValue) {
-			console.log("match");
 			p2ScoreBoard += 1;
 			p2Score.innerHTML = p2ScoreBoard;
-			this.style.visibility = "hidden";
 			player1Turn = true;
+			this.style.visibility = "hidden";
 			playerTurnDisplay.innerHTML = "Player 1";
 			playerTurnDisplay.style.backgroundColor = "#90EE90";
-			colorDisplayValue = ""
-			colorDisplay.innerHTML = "Click for Color";
-			console.log(colorDisplay.className);
-			colorDisplay.className = colorDisplay.className.substring(0, colorDisplay.className.indexOf(' '));
-			console.log(colorDisplay.className);
-			// colorDisplay.style.backgroundColor = ""
-		} else {
-			console.log("no match");
-	//		alert("Sorry, not a match!");
-		}
+			menuReset();
+		} 
 	} endGame();
 }
 
@@ -164,6 +146,11 @@ var p1Score = document.getElementById('p1ScoreBox');
 var p2Score = document.getElementById('p2ScoreBox');
 var playerTurnDisplay = document.getElementById('playerTurnDisplay');
 
+function menuReset(){
+	colorDisplayValue = "";
+	colorDisplay.innerHTML = "Click for Color";
+	colorDisplay.className = colorDisplay.className.substring(0, colorDisplay.className.indexOf(' '));
+}
 
 ///////////////////////////////////////////////////////////////////////////
 //Checking for Available Moves function
