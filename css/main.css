@@ -30,7 +30,7 @@ font-family: 'Short Stack', cursive;
 	display: inline-block;
 	width: 50px;
 	height: 50px;
-	background-image: url("images/redbug02.png");
+	background-image: url("../../images/redbug02.png");
 	background-size: 100%;
 	background-repeat: no-repeat;
 }
@@ -38,7 +38,7 @@ font-family: 'Short Stack', cursive;
 	display: inline-block;
 	width: 50px;
 	height: 50px;
-	background-image: url("images/bluebug03.png");
+	background-image: url("../../images/bluebug03.png");
 	background-size: 100%;
 	background-repeat: no-repeat;
 }
@@ -46,7 +46,7 @@ font-family: 'Short Stack', cursive;
 	display: inline-block;
 	width: 50px;
 	height: 50px;
-	background-image: url("images/yellowbug03.png");
+	background-image: url("../../images/yellowbug03.png");
 	background-size: 100%;
 	background-repeat: no-repeat;
 }
@@ -54,7 +54,7 @@ font-family: 'Short Stack', cursive;
 	display: inline-block;
 	width: 50px;
 	height: 50px;
-	background-image: url("images/purplebug04.png");
+	background-image: url("../../images/purplebug04.png");
 	background-size: 100%;
 	background-repeat: no-repeat;
 }
