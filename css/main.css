@@ -10,20 +10,20 @@ font-family: 'Short Stack', cursive;
 }
 
 .main {
+	position: relative;
 	min-width: 820px;
 	max-height: auto;
 	margin: auto;
-	position: relative;
-	text-align: center;
 	font-family: 'Short Stack', cursive;
+	text-align: center;
 }
 
 .titleBanner {
     display: inline-block;
+    width: 590px;
     font-family: 'Short Stack', cursive;
     font-weight: bolder;
     font-size: 35px;
-    width: 590px;
     text-align: center;
 }
 #bannerBug1 {
@@ -64,70 +64,70 @@ margin: 0px;
 }
 /* TOP BUTTON MENU *****************************************************************/
 #buttonMenu {
+    position: relative;
     display: inline-block;
-    border-radius: 30px;
+    float: top;
     width: auto;
     height: auto;
-    float: top;
-    position: relative;
+    border-radius: 30px;
     padding-top: 5px;
     margin-bottom: 5px;
 }
 
 #howToButton {
     display: inline-block;
-    font-family: 'Short Stack', cursive;
-    color: DarkGoldenrod;
-    font-weight: bold;
-    font-size: 15px;
+    width: 110px;
+    height: 20px;
     background-color: #FFFACD;
     border: 4px dotted DarkGoldenrod;
     border-radius: 30px;
-    width: 110px;
-    height: 20px;
     padding: 5px;
+    font-family: 'Short Stack', cursive;
+    font-size: 15px;
+    font-weight: bold;
+    color: DarkGoldenrod;
 }
 
 #startButton {
-	font-family: 'Short Stack', cursive;
-	color: #006400;
-	font-weight: bolder;
-	font-size: 30px;
 	display: inline-block;
-	margin-bottom: 10px;
+	width: 150px;
+	height: 40px;
 	background-color: #98FB98;
 	border: 5px dotted #006400;
 	border-radius: 30px;
-	width: 150px;
-	height: 40px;
+	margin-bottom: 10px;
+	font-family: 'Short Stack', cursive;
+	color: #006400;
+	font-size: 30px;
+	font-weight: bolder;
 	padding-top: 3px; 
 }
 
 #restartButton {
     display: inline-block;
-    font-family: 'Short Stack', cursive;
-    color: #8B0000;
-    font-weight: bold;
-    font-size: 15px;
+    width: 110px;
+    height: 20px;
     background-color: #F08080;
     border: 4px dotted #8B0000;
     border-radius: 30px;
-    width: 110px;
-    height: 20px;
     padding: 5px;
+    font-family: 'Short Stack', cursive;
+    color: #8B0000;
+    font-size: 15px;
+    font-weight: bold;
 }
 
 /* TOP MENU *****************************************************************/
 
 #topOfBoard {
+	position: relative;
 	display: inline-block;
+	float: top;
+	width: 500px;
+	height: 90px;
 	border: 5px dotted black;
 	background: rgba(255,255,255,.8);
 	border-radius: 30px;
-	width: 500px;
-	height: 90px;
-	float: top;
-	position: relative;
 	padding-top: 5px; 
 	margin-bottom: 10px;
 }
@@ -136,24 +136,23 @@ margin: 0px;
 	display: inline-block; 
 	width: 150px;
 	height: 30px;
-	text-align: center;
 	vertical-align: center;
 	line-height: 30px;
 	font-family: 'Coming Soon', cursive;
 	font-weight: bold;
 	font-size: 20px;
-
+	text-align: center;
 }
 
 .topMenu {
 	display: inline-block; 
 	width: 150px;
 	height: 50px;
-	text-align: center;
-	vertical-align: center;
-	line-height: 50px;
 	font-family: 'Short Stack', cursive;
 	font-size: 17px;
+	line-height: 50px;
+	text-align: center;
+	vertical-align: center;
 
 }
 
@@ -167,9 +166,9 @@ margin: 0px;
 	display: inline-block;
 	border: 3px solid black;
 	border-radius: 30px;
+	font-weight: bolder;
 	text-align: center;
 	vertical-align: center;
-	font-weight: bolder;
 }
 
 #colorDisplayTop {
@@ -182,9 +181,9 @@ margin: 0px;
 	display: inline-block;
 	border: 3px solid black;
 	border-radius: 30px;
+	font-weight: bolder;
 	text-align: center;
 	vertical-align: center;
-	font-weight: bolder;
 }
 
 #stinkCountTop {
@@ -197,9 +196,9 @@ margin: 0px;
 	display: inline-block;
 	border: 3px solid black;
 	border-radius: 30px;
+	font-weight: bolder;
 	text-align: center;
 	vertical-align: center;
-	font-weight: bolder;
 }
 
 
@@ -207,51 +206,50 @@ margin: 0px;
 /* BOARD CONTAINERS *****************************************************************/
 
 #innerContainer {
+	position: relative;
 	min-width: 820px; 
 	max-height: auto;
 	margin: auto;
-	position: relative;
 	text-align: center;
 }
 
 .board {
+	position: relative;
 	display: inline-block;
+	float: center;
+	width: 500px;
 	border: 10px dotted #A4E3FF;
 	background: rgba(255,255,255,.4);
-	width: 500px;
 	margin: auto;
 	padding: 5px;
-	position: relative;
 	text-align: center;
-	float: center;
 }
 
 .cells {
-	border-radius: 50%;
 	display: inline-block;
-	background-size: contain;
-/*	border: 1px solid black; */
-	height: 100px;
 	width: 100px;
+	height: 100px;
+	border-radius: 50%;
+	background-size: contain;
 	margin: 5px;
+	line-height: 100px;
 	text-align: center;
 	vertical-align: center;
-	line-height: 100px;
 }
 
 /* PLAYER CONTAINERS *****************************************************************/
 
 .container {
+    position: relative;
     display: inline-block;
+    width: 131px;
+    height: auto;
     background: rgba(255,255,255,.8);
 	border: 5px dotted black;
     border-radius: 30px;
-    height: auto;
-    width: 131px;
-    position: relative;
+    padding-top: 15px;
     text-align: center;
     vertical-align: top;
-    padding-top: 15px;
 }
 
 #containerLeft {
@@ -263,18 +261,18 @@ margin: 0px;
 }
 .score {
     display: inline-block;
+    width: 115px;
+    height: 50px;
+    border: 1px solid black;
+    border-radius: 30px;
+    margin-bottom: 10px;
     font-family: 'Short Stack', cursive;
 	font-weight: bold;
-    border-radius: 30px;
-    border: 1px solid black;
-    height: 50px;
-    width: 115px;
+    word-wrap: break-word;
     text-align: center;
     vertical-align: center;
     line-height: 50px;
-    word-wrap: break-word;
     overflow: auto;
-    margin-bottom: 10px;
 }
 
 .player1 {
@@ -332,8 +330,8 @@ ul {
 }
 
 #startMessage {
-	display: none;
     position: relative;
+	display: none;
     width: 300px;
     height: 315px;
     margin: 0 auto 0;
@@ -354,8 +352,8 @@ ul {
 
 
 #howToMessage {
-    display: none;
     position: relative;
+    display: none;
     width: 340px;
     height: 370px;
     margin: 0 auto 0;
@@ -371,8 +369,8 @@ ul {
 }
 
 #noMatchMessage {
-    display: none;
     position: relative;
+    display: none;
     width: 275px;
     height: 210px;
     padding: 0 15px;
@@ -384,8 +382,8 @@ ul {
 }
 
 #p1StinkMessage {
-    display: none;
     position: relative;
+    display: none;
     width: 275px;
     height: 250px;
     padding: 0 15px;
@@ -397,8 +395,8 @@ ul {
 }
 
 #p2StinkMessage {
-	display: none;
     position: relative;
+	display: none;
     width: 275px;
     height: 250px;
     padding: 0 15px;
@@ -410,8 +408,8 @@ ul {
 }
 
 #coopStinkMessage {
-	display: none;
     position: relative;
+	display: none;
     width: 275px;
     height: 275px;
     padding: 0 15px;
@@ -423,8 +421,8 @@ ul {
 }
 
 #allClearMessage {
-	display: none;
     position: relative;
+	display: none;
     width: 300px;
     height: 270px;
     margin: 0 auto 0;
