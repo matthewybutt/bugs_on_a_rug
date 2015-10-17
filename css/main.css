@@ -6,12 +6,12 @@ font-family: 'Short Stack', cursive;
 .body {
 	background-color: #A4E3FF;
 	background-size: 100%;
-	background-repeat: repeat;
+	min-width: 880px;
 }
 
 .main {
 	position: relative;
-	min-width: 820px;
+	min-width: 825px;
 	max-height: auto;
 	margin: auto;
 	font-family: 'Short Stack', cursive;
@@ -20,7 +20,7 @@ font-family: 'Short Stack', cursive;
 
 .titleBanner {
     display: inline-block;
-    width: 590px;
+    width: 600px;
     font-family: 'Short Stack', cursive;
     font-weight: bolder;
     font-size: 35px;
@@ -62,12 +62,19 @@ font-family: 'Short Stack', cursive;
 h1 {
 margin: 0px;
 }
+
+#banner{
+	position: relative;
+	display: inline-block;
+	max-width: 825px;
+}
+
 /* TOP BUTTON MENU *****************************************************************/
 #buttonMenu {
     position: relative;
     display: inline-block;
     float: top;
-    width: auto;
+    width: 500px;
     height: auto;
     border-radius: 30px;
     padding-top: 5px;
