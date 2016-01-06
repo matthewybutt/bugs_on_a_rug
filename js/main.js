@@ -151,7 +151,9 @@ var clickCell = function(event) {
 				if (this.data === colorDisplayValue) {
 					p1Score += 1;
 					p1ScoreBox.innerHTML = p1Score;
-					this.style.visibility = "hidden";
+					// this.style.visibility = "hidden";
+					this.className += " animated rotateOutUpLeft";
+					this.style.cursor= "default";
 					player1Turn = false;
 					playerTurnDisplay.innerHTML = "Player 2";
 					playerTurnDisplay.style.backgroundColor = "#FF8C00";
@@ -161,7 +163,9 @@ var clickCell = function(event) {
 				if (this.data === colorDisplayValue) {
 					p2Score += 1;
 					p2ScoreBox.innerHTML = p2Score;
-					this.style.visibility = "hidden";
+					// this.style.visibility = "hidden";
+					this.className += " animated rotateOutUpRight";
+					this.style.cursor= "default";
 					player1Turn = true;
 					playerTurnDisplay.innerHTML = "Player 1";
 					playerTurnDisplay.style.backgroundColor = "#90EE90";
@@ -173,7 +177,9 @@ var clickCell = function(event) {
 			if (this.data === colorDisplayValue) {
 				p1Score += 1;
 				p1ScoreBox.innerHTML = p1Score;
-				this.style.visibility = "hidden";
+				// this.style.visibility = "hidden";
+				this.className += " animated rotateOut";
+				this.style.cursor= "default";
 				resetTopMenu();
 			}
 		} endGame();
