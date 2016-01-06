@@ -9,6 +9,7 @@ var stinkBugsMaster = "ÖÖÖÖÖ";
 var coopMode = false;
 var p1Score = 0;
 var p2Score = 0;
+var gameHasStarted = false;
 
 ///////////////////////////////////////////////////////////////////////////
 //Restart Game Button function
@@ -16,7 +17,6 @@ var restart = document.getElementById("restartButton");
 restart.addEventListener('click', restartGame);
 function restartGame(){
    window.location.reload();
-   gameStart();
 }
 
 ///////////////////////////////////////////////////////////////////////////
@@ -42,6 +42,9 @@ startBtn.addEventListener('click', chooseStartGame);
 var startMessage = document.getElementById("startMessage");
 function chooseStartGame () {
 	startMessage.style.display = "block";
+	gameHasStarted = true;
+	var colorDisplay = document.getElementById("colorDisplay");
+	colorDisplay.addEventListener('click', randomColorSelect);
 }
 
 var vsBtn = document.getElementById("vsBtn");
@@ -105,6 +108,7 @@ function startGame(){
 	playerTurnDisplay.style.backgroundColor = "#90EE90";
 	colorDisplayValue = "";
 	colorDisplay.innerHTML = "Click for Color";
+	colorDisplay.style.cursor = "pointer";
 }
 
 ///////////////////////////////////////////////////////////////////////////
@@ -137,9 +141,6 @@ var randomColorSelect = function() {
         return;
         }
 }
-
-var colorDisplay = document.getElementById("colorDisplay");
-colorDisplay.addEventListener('click', randomColorSelect);
 
 ///////////////////////////////////////////////////////////////////////////
 //Matching Bugs & Score Keeping function

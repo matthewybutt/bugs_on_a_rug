@@ -79,6 +79,7 @@ margin: 0px;
     border-radius: 30px;
     padding-top: 5px;
     margin-bottom: 5px;
+    cursor: pointer;
 }
 
 #howToButton {
@@ -107,7 +108,7 @@ margin: 0px;
 	color: #006400;
 	font-size: 30px;
 	font-weight: bolder;
-	padding-top: 3px; 
+	padding-top: 3px;
 }
 
 #restartButton {
@@ -135,12 +136,12 @@ margin: 0px;
 	border: 5px dotted black;
 	background: rgba(255,255,255,.8);
 	border-radius: 30px;
-	padding-top: 5px; 
+	padding-top: 5px;
 	margin-bottom: 10px;
 }
 
 .topOfMenu {
-	display: inline-block; 
+	display: inline-block;
 	width: 150px;
 	height: 30px;
 	vertical-align: center;
@@ -152,7 +153,7 @@ margin: 0px;
 }
 
 .topMenu {
-	display: inline-block; 
+	display: inline-block;
 	width: 150px;
 	height: 50px;
 	font-family: 'Short Stack', cursive;
@@ -160,7 +161,6 @@ margin: 0px;
 	line-height: 50px;
 	text-align: center;
 	vertical-align: center;
-
 }
 
 #playerTurnTop {
@@ -214,7 +214,7 @@ margin: 0px;
 
 #innerContainer {
 	position: relative;
-	min-width: 820px; 
+	min-width: 820px;
 	max-height: auto;
 	margin: auto;
 	text-align: center;
@@ -242,6 +242,7 @@ margin: 0px;
 	line-height: 100px;
 	text-align: center;
 	vertical-align: center;
+  cursor: pointer;
 }
 
 /* PLAYER CONTAINERS *****************************************************************/
@@ -347,14 +348,17 @@ ul {
     border-radius: 30px;
     background-color: #FFFFE0;
     padding: 0 10px;
+    cursor: pointer;
 }
 
 #coopBtn {
 	margin-right: 15px;
+  cursor: pointer;
 }
 
 #vsBtn {
 	margin-left: 15px;
+  cursor: pointer;
 }
 
 
@@ -369,10 +373,12 @@ ul {
     border-radius: 30px;
     background-color: #FFFFE0;
     padding: 0 10px 10px;
+    cursor: pointer;
 }
 
 #howToOKBtn {
-	margin-top: 15px; 
+	margin-top: 15px;
+  cursor: pointer;
 }
 
 #noMatchMessage {
@@ -386,6 +392,7 @@ ul {
     border: double 10px black;
     border-radius: 30px;
     background-color: #DCDCDC;
+    cursor: pointer;
 }
 
 #p1StinkMessage {
@@ -399,11 +406,12 @@ ul {
     border: double 10px black;
     border-radius: 30px;
     background-color: #FFC145;
+    cursor: pointer;
 }
 
 #p2StinkMessage {
     position: relative;
-	display: none;
+	  display: none;
     width: 275px;
     height: 250px;
     padding: 0 15px;
@@ -412,11 +420,12 @@ ul {
     border: double 10px black;
     border-radius: 30px;
     background-color: #90EE90;
+    cursor: pointer;
 }
 
 #coopStinkMessage {
     position: relative;
-	display: none;
+	  display: none;
     width: 275px;
     height: 275px;
     padding: 0 15px;
@@ -425,11 +434,12 @@ ul {
     border: double 10px black;
     border-radius: 30px;
     background-color: #DCDCDC;
+    cursor: pointer;
 }
 
 #allClearMessage {
     position: relative;
-	display: none;
+    display: none;
     width: 300px;
     height: 270px;
     margin: 0 auto 0;
@@ -437,4 +447,5 @@ ul {
     border: double 10px black;
     border-radius: 30px;
     background-color: #FFFFE0;
+    cursor: pointer;
 }
