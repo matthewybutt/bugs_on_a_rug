@@ -59,8 +59,9 @@ font-family: 'Short Stack', cursive;
 	background-repeat: no-repeat;
 }
 
-h1 {
-margin: 0px;
+.titleBanner p {
+	font-size: 70px;
+	margin: 10px auto 10px;
 }
 
 #banner{
