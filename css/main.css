@@ -337,6 +337,10 @@ ul {
 	text-align: left;
 }
 
+button {
+	cursor: pointer;
+}
+
 #startMessage {
     position: relative;
 	display: none;
@@ -348,17 +352,16 @@ ul {
     border-radius: 30px;
     background-color: #FFFFE0;
     padding: 0 10px;
-    cursor: pointer;
 }
 
 #coopBtn {
 	margin-right: 15px;
-  cursor: pointer;
+  	cursor: pointer;
 }
 
 #vsBtn {
 	margin-left: 15px;
-  cursor: pointer;
+  	cursor: pointer;
 }
 
 
@@ -373,12 +376,11 @@ ul {
     border-radius: 30px;
     background-color: #FFFFE0;
     padding: 0 10px 10px;
-    cursor: pointer;
 }
 
 #howToOKBtn {
 	margin-top: 15px;
-  cursor: pointer;
+  	cursor: pointer;
 }
 
 #noMatchMessage {
@@ -392,7 +394,6 @@ ul {
     border: double 10px black;
     border-radius: 30px;
     background-color: #DCDCDC;
-    cursor: pointer;
 }
 
 #p1StinkMessage {
@@ -406,7 +407,6 @@ ul {
     border: double 10px black;
     border-radius: 30px;
     background-color: #FFC145;
-    cursor: pointer;
 }
 
 #p2StinkMessage {
@@ -420,7 +420,6 @@ ul {
     border: double 10px black;
     border-radius: 30px;
     background-color: #90EE90;
-    cursor: pointer;
 }
 
 #coopStinkMessage {
@@ -434,7 +433,6 @@ ul {
     border: double 10px black;
     border-radius: 30px;
     background-color: #DCDCDC;
-    cursor: pointer;
 }
 
 #allClearMessage {
@@ -447,5 +445,4 @@ ul {
     border: double 10px black;
     border-radius: 30px;
     background-color: #FFFFE0;
-    cursor: pointer;
 }
