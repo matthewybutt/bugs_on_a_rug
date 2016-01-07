@@ -42,15 +42,16 @@ startBtn.addEventListener('click', chooseStartGame);
 var startMessage = document.getElementById("startMessage");
 function chooseStartGame () {
 	startMessage.style.display = "block";
-	gameHasStarted = true;
-	var colorDisplay = document.getElementById("colorDisplay");
-	colorDisplay.addEventListener('click', randomColorSelect);
 }
 
 var vsBtn = document.getElementById("vsBtn");
 vsBtn.addEventListener('click', startVS);
 function startVS () {
 	startMessage.style.display = "none";
+	gameHasStarted = true;
+	var colorDisplay = document.getElementById("colorDisplay");
+	colorDisplay.addEventListener('click', randomColorSelect);
+	colorDisplay.style.cursor = "pointer";
 	startGame();
 }
 
@@ -61,6 +62,10 @@ function startCoop () {
 	startMessage.style.display = "none";
 	containerRight.style.visibility = "hidden";
 	coopMode = true;
+	gameHasStarted = true;
+	var colorDisplay = document.getElementById("colorDisplay");
+	colorDisplay.addEventListener('click', randomColorSelect);
+	colorDisplay.style.cursor = "pointer";
 	startGame();
 }
 
@@ -113,6 +118,8 @@ function startGame(){
 	colorDisplayValue = "";
 	colorDisplay.innerHTML = "Click for Color";
 	colorDisplay.style.cursor = "pointer";
+	startBtn.className += " disableButton";
+	startBtn.style.cursor = "default";
 }
 
 ///////////////////////////////////////////////////////////////////////////
@@ -123,27 +130,35 @@ var randomColorSelect = function() {
         colorDisplayValue = "red";
         colorDisplay.innerHTML = "Red";
         colorDisplay.className = 'topMenu red';
+        colorDisplay.className += " disableButton";
+        colorDisplay.style.cursor = "default";	
         areAllHidden();
         return;
     } else if ((num > 0.25) && (num < 0.5)){
         colorDisplayValue = "blue";
         colorDisplay.innerHTML = "Blue";
         colorDisplay.className = 'topMenu blue';
-         areAllHidden();
+        colorDisplay.className += " disableButton";
+        colorDisplay.style.cursor = "default";	
+        areAllHidden();
          return;
     } else if (num > 0.75) {
         colorDisplayValue = "yellow";
         colorDisplay.innerHTML = "Yellow";
         colorDisplay.className = 'topMenu yellow';
+        colorDisplay.className += " disableButton";
+        colorDisplay.style.cursor = "default";	
         areAllHidden();
         return;
     } else {
         colorDisplayValue = "purple";
         colorDisplay.innerHTML = "Purple";
         colorDisplay.className = 'topMenu purple';
+        colorDisplay.className += " disableButton";
+        colorDisplay.style.cursor = "default";	
         areAllHidden();
         return;
-        }
+        }	
 }
 
 ///////////////////////////////////////////////////////////////////////////
@@ -199,6 +214,7 @@ function resetTopMenu(){
 	colorDisplayValue = "";
 	colorDisplay.innerHTML = "Click for Color";
 	colorDisplay.className = colorDisplay.className.substring(0, colorDisplay.className.indexOf(' '));
+	colorDisplay.style.cursor = "pointer";
 }
 
 ///////////////////////////////////////////////////////////////////////////

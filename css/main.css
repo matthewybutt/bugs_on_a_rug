@@ -79,7 +79,6 @@ margin: 0px;
     border-radius: 30px;
     padding-top: 5px;
     margin-bottom: 5px;
-    cursor: pointer;
 }
 
 #howToButton {
@@ -94,6 +93,7 @@ margin: 0px;
     font-size: 15px;
     font-weight: bold;
     color: DarkGoldenrod;
+    cursor: pointer;
 }
 
 #startButton {
@@ -109,6 +109,7 @@ margin: 0px;
 	font-size: 30px;
 	font-weight: bolder;
 	padding-top: 3px;
+	cursor: pointer;
 }
 
 #restartButton {
@@ -123,6 +124,7 @@ margin: 0px;
     color: #8B0000;
     font-size: 15px;
     font-weight: bold;
+    cursor: pointer;
 }
 
 /* TOP MENU *****************************************************************/
@@ -161,6 +163,7 @@ margin: 0px;
 	line-height: 50px;
 	text-align: center;
 	vertical-align: center;
+	cursor: default;
 }
 
 #playerTurnTop {
@@ -261,11 +264,14 @@ margin: 0px;
 
 #containerLeft {
 	margin-right: 25px;
+	cursor: default;
 }
 
 #containerRight {
 	margin-left: 25px;
+	cursor: default;
 }
+
 .score {
     display: inline-block;
     width: 115px;
@@ -454,3 +460,9 @@ button {
     border-radius: 30px;
     background-color: #FFFFE0;
 }
+
+/* Disable Buttons *****************************************************************/
+.disableButton {
+	pointer-events: none;
+}
+
