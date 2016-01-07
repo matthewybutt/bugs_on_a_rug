@@ -80,7 +80,8 @@ function startGame(){
         case 10:
         case 15:
           rugBoard[i].data = "red";
-          rugBoard[i].style.backgroundColor = "red";
+          // rugBoard[i].style.backgroundColor = "red";
+          rugBoard[i].style.cursor = "pointer";
           rugBoard[i].style.backgroundImage = "url(./images/redbug0"+(redCount++)+".png)";
           break;
        case 1:
@@ -88,7 +89,8 @@ function startGame(){
        case 11:
        case 12:
           rugBoard[i].data = "blue";
-          rugBoard[i].style.backgroundColor = "blue";
+          // rugBoard[i].style.backgroundColor = "blue";
+          rugBoard[i].style.cursor = "pointer";
           rugBoard[i].style.backgroundImage = "url(./images/bluebug0"+(blueCount++)+".png)";
           break;
        case 2:
@@ -96,12 +98,14 @@ function startGame(){
        case 8:
        case 13:
           rugBoard[i].data = "yellow";
-          rugBoard[i].style.backgroundColor = "yellow";
+          // rugBoard[i].style.backgroundColor = "yellow";
+          rugBoard[i].style.cursor = "pointer";
           rugBoard[i].style.backgroundImage = "url(./images/yellowbug0"+(yellowCount++)+".png)";          
           break;
         default:
           rugBoard[i].data = "purple";
-          rugBoard[i].style.backgroundColor = "purple";
+          // rugBoard[i].style.backgroundColor = "purple";
+          rugBoard[i].style.cursor = "pointer";
           rugBoard[i].style.backgroundImage = "url(./images/purplebug0"+(purpleCount++)+".png)";      }
   }
 	playerTurnDisplay.innerHTML = "Player 1";
@@ -178,9 +182,9 @@ var clickCell = function(event) {
 			var thisBug = this;
 				p1Score += 1;
 				p1ScoreBox.innerHTML = p1Score;
+				this.className += " animated rotateOut";
 				var thisBug = this;
 				setTimeout(function() {thisBug.style.visibility = "hidden";}, 800);
-				this.className += " animated rotateOut";
 				resetTopMenu();
 			}
 		} endGame();
